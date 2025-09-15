@@ -80,7 +80,7 @@ export default function Header({ language, setLanguage, messages }) {
         </div>
 
         {/* Mobile Navigation */}
-        <AnimatePresence>
+      
           {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
@@ -103,7 +103,7 @@ export default function Header({ language, setLanguage, messages }) {
               ))}
             </motion.div>
           )}
-        </AnimatePresence>
+      
       </nav>
     </motion.header>
   );
