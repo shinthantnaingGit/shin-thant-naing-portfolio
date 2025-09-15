@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Globe } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-export default function Header({ language, setLanguage, activeSection, scrollToSection, messages }) {
+export default function Header({ language, setLanguage, messages }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: messages.nav.home },
-    { id: 'about', label: messages.nav.about },
-    { id: 'skills', label: messages.nav.skills },
-    { id: 'projects', label: messages.nav.projects },
-    { id: 'experience', label: messages.nav.experience },
-    { id: 'contact', label: messages.nav.contact },
+    { id: "home", label: messages.nav.home },
+    { id: "about", label: messages.nav.about },
+    { id: "skills", label: messages.nav.skills },
+    { id: "projects", label: messages.nav.projects },
+    { id: "experience", label: messages.nav.experience },
+    { id: "contact", label: messages.nav.contact },
   ];
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'ja' : 'en');
+    setLanguage(language === "en" ? "ja" : "en");
   };
 
   return (
@@ -39,25 +39,15 @@ export default function Header({ language, setLanguage, activeSection, scrollToS
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.button
+              <motion.a
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                href={`#${item.id}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === item.id
-                    ? 'text-purple-400'
-                    : 'text-gray-300 hover:text-white'
-                }`}
+                className="relative px-3 py-2 text-sm font-medium transition-colors text-gray-300 hover:text-white"
               >
                 {item.label}
-                {activeSection === item.id && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400"
-                  />
-                )}
-              </motion.button>
+              </motion.a>
             ))}
           </div>
 
@@ -70,7 +60,7 @@ export default function Header({ language, setLanguage, activeSection, scrollToS
               className="bg-slate-800/50 border-purple-500/30 text-purple-300 hover:bg-purple-900/30"
             >
               <Globe className="w-4 h-4 mr-2" />
-              {language === 'en' ? '🇯🇵 JP' : '🇬🇧 EN'}
+              {language === "en" ? "🇯🇵 JP" : "🇬🇧 EN"}
             </Button>
 
             {/* Mobile Menu Button */}
@@ -80,7 +70,11 @@ export default function Header({ language, setLanguage, activeSection, scrollToS
               className="md:hidden text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -90,28 +84,22 @@ export default function Header({ language, setLanguage, activeSection, scrollToS
           {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden border-t border-purple-500/20 py-4"
             >
               {navItems.map((item, index) => (
-                <motion.button
+                <motion.a
                   key={item.id}
+                  href={`#${item.id}`}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => {
-                    scrollToSection(item.id);
-                    setIsMenuOpen(false);
-                  }}
-                  className={`block w-full text-left px-3 py-3 text-sm font-medium transition-colors ${
-                    activeSection === item.id
-                      ? 'text-purple-400 bg-purple-900/20'
-                      : 'text-gray-300 hover:text-white hover:bg-slate-800/50'
-                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full text-left px-3 py-3 text-sm font-medium transition-colors text-gray-300 hover:text-white hover:bg-slate-800/50"
                 >
                   {item.label}
-                </motion.button>
+                </motion.a>
               ))}
             </motion.div>
           )}

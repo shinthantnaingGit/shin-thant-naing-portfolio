@@ -85,7 +85,10 @@ export default function About({ messages = {} }) {
         ];
 
   return (
-    <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8">
+    <section
+      id="about"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24 sm:scroll-mt-28"
+    >
       {/* decorative orb behind layout */}
       <div
         aria-hidden

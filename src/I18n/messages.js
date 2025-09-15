@@ -35,8 +35,8 @@ export const messages = {
           },
           {
             dot: "bg-cyan-400",
-            k: "Bakery POS (Coo’ Bakery)",
-            v: "POS system built on Inventura foundation. Handles sales input, inventory integration, A4 invoice layout.",
+            k: "Swan Thu Kha - Traditional Myanmar Medicine",
+            v: "Portfolio website with service pages, modern UI, and smooth animations (React + Tailwind + Framer Motion).",
           },
           {
             dot: "bg-indigo-400",
@@ -84,38 +84,126 @@ export const messages = {
       viewDemo: "View Demo",
       sourceCode: "Source Code",
       details: "Details",
+      items: [
+        {
+          key: "inventura",
+          title: "Inventura - Inventory & Invoice Management",
+          description:
+            "Inventory CRUD with real-time tracking, professional invoice generation and management, and dashboard analytics (revenue, sales, top products). Bilingual-ready (EN/JA).",
+          tech: [
+            "Next.js",
+            "React",
+            "Laravel API",
+            "Chart.js",
+            "TailwindCSS",
+            "SWR",
+            "Zustand",
+          ],
+          category: "Full-Stack",
+          image:
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+          url: "https://inventura-inventory-management-syst.vercel.app/",
+          featured: true,
+        },
+        {
+          key: "swanthukha",
+          title: "Swan Thu Kha - Traditional Myanmar Medicine",
+          description:
+            "Clinic portfolio with service pages, bilingual-ready layout, and subtle animations.",
+          tech: ["React", "Tailwind CSS", "Framer Motion"],
+          category: "Portfolio",
+          image:
+            "https://images.unsplash.com/photo-1505575972945-334ecb2293f2?w=600&h=400&fit=crop",
+          url: "https://swanthukha.phoenixgroupint.com/",
+        },
+        {
+          key: "lapyaewoon",
+          title: "La Pyae Woon Iron & Steel Trading",
+          description:
+            "Business portfolio with custom branding and smooth interactions.",
+          tech: ["React", "Framer Motion", "CSS"],
+          category: "Portfolio",
+          image:
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+          url: "https://lapyaewoon.phoenixgroupint.com/",
+        },
+        {
+          key: "invoice",
+          title: "Invoice Generation Tool (HTML/CSS/JS)",
+          description:
+            "Create printable invoices, manage items, and see live totals with tax.",
+          tech: ["HTML", "CSS", "JavaScript"],
+          category: "Frontend",
+          image:
+            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+          url: "https://invoice-app-theta-six.vercel.app/",
+        },
+        {
+          key: "todo",
+          title: "To Do List App (HTML/CSS/JS)",
+          description:
+            "Clean todo app with counters and quick actions to mark/clear tasks.",
+          tech: ["HTML", "CSS", "JavaScript"],
+          category: "Frontend",
+          image:
+            "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+          url: "https://to-do-list-app-deployment.vercel.app/",
+        },
+      ],
     },
     experience: {
       title: "Professional Experience",
+      jobsTitle: "Job Experience",
+      educationTitle: "Education",
       current: "Current Position",
       previous: "Previous Experience",
       experiences: {
         researcher: {
           title: "Research Engineer",
-          company: "Kajima Corporation",
+          company:
+            "Dispatch: Enchant Inc. → Assignment: Kajima Corporation Technical Research Institute (GI Fund CN Concrete Project)",
           location: "Tokyo, Japan",
-          period: "2024 - Present",
+          period: "Sep 2024 - Present",
           description:
-            "Leading CO₂ reduction research initiatives and managing equipment procurement for sustainable construction technologies. Analyzing datasets and developing solutions for environmental challenges.",
+            "Research support and operations at Kajima Technical Research Institute: quotation handling, procurement coordination, standardization and safety, data整理/visualization, and stakeholder communication.",
           highlights: [
-            "CO₂ reduction research and analysis",
-            "Equipment procurement management",
-            "Data analysis and reporting",
-            "Sustainable technology development",
+            "Quotation requests and documentation (Excel/Word/PowerPoint)",
+            "Procurement management: ordering, lead-time coordination, and delivery planning support",
+            "Standardization & safety: work standards, procedures, KY risk identification and mitigation",
+            "Research support: sensor setup assistance, data整理 and charting (Excel), report creation",
+            "Daily coordination and reporting with managers, partners, and research members",
+            "Improved technical Japanese writing/reading; Excel-based data analysis",
+            "Achieved cost reductions via competitive quotations; enhanced safety rules",
+          ],
+        },
+        coordinator: {
+          title: "Coordinator",
+          company: "Career Tech Japan",
+          location: "Japan",
+          period: "Dec 2023 - Jun 2024",
+          description:
+            "Matched Japanese companies with Myanmar candidates; prepared/translated documents, coordinated interviews, and supported visa application paperwork.",
+          highlights: [
+            "Candidate matching and interview coordination",
+            "Document preparation and translation (JA⇔EN/MM)",
+            "Technical Intern/Specified Skilled visa paperwork support",
+            "Pre-departure guidance and travel preparation",
+            "Business-level Japanese usage experience",
           ],
         },
         teacher: {
-          title: "Japanese Language Instructor",
-          company: "Various Institutions",
-          location: "Myanmar / Japan",
-          period: "2022 - 2024",
+          title: "Japanese Language Teacher (N5–N3)",
+          company: "Myanmar Unity Employment Agency",
+          location: "Myanmar",
+          period: "Apr 2023 - Dec 2023",
           description:
-            "Taught Japanese to international students while developing web skills, strengthening communication and cross-cultural collaboration.",
+            "Taught Japanese grammar, conversation, and kanji to technical intern candidates; prepared class materials and managed student progress.",
           highlights: [
-            "Cross-cultural communication",
-            "Curriculum development",
-            "Student mentoring",
-            "Language pedagogy",
+            "N5–N3 instruction with conversation focus",
+            "Material creation and improvement (Google Slides/PDF)",
+            "Progress tracking, reports, and one-on-one coaching",
+            "Monthly tests, evaluation, and interviews",
+            "Classroom leadership and practical Japanese for work",
           ],
         },
         student: {
@@ -186,8 +274,8 @@ export const messages = {
           },
           {
             dot: "bg-cyan-400",
-            k: "ベーカリーPOS (Coo’ Bakery)",
-            v: "Inventura基盤を活用した小規模店舗向けPOS。販売入力、在庫連動、A4印刷対応。",
+            k: "Swan Thu Kha - 伝統医療（ミャンマー）",
+            v: "サービス紹介ページを備えたポートフォリオサイト。モダンなUIとアニメーション（React + Tailwind + Framer Motion）。",
           },
           {
             dot: "bg-indigo-400",
@@ -234,38 +322,126 @@ export const messages = {
       viewDemo: "デモを見る",
       sourceCode: "ソースコード",
       details: "詳細",
+      items: [
+        {
+          key: "inventura",
+          title: "インベンチュラ - 在庫・請求管理",
+          description:
+            "在庫CRUDとリアルタイム追跡、プロフェッショナルな請求書の作成・管理、ダッシュボード分析（収益・売上・トップ商品）。英日バイリンガル対応。",
+          tech: [
+            "Next.js",
+            "React",
+            "Laravel API",
+            "Chart.js",
+            "TailwindCSS",
+            "SWR",
+            "Zustand",
+          ],
+          category: "フルスタック",
+          image:
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+          url: "https://inventura-inventory-management-syst.vercel.app/",
+          featured: true,
+        },
+        {
+          key: "swanthukha",
+          title: "Swan Thu Kha - 伝統医療（ミャンマー）",
+          description:
+            "サービス紹介ページ付きのクリニック用ポートフォリオ。バイリンガル対応の軽量UI。",
+          tech: ["React", "Tailwind CSS", "Framer Motion"],
+          category: "ポートフォリオ",
+          image:
+            "https://images.unsplash.com/photo-1505575972945-334ecb2293f2?w=600&h=400&fit=crop",
+          url: "https://swanthukha.phoenixgroupint.com/",
+        },
+        {
+          key: "lapyaewoon",
+          title: "La Pyae Woon Iron & Steel Trading",
+          description:
+            "ロゴ/ブランディングを含む事業用ポートフォリオ。滑らかなアニメーション。",
+          tech: ["React", "Framer Motion", "CSS"],
+          category: "ポートフォリオ",
+          image:
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+          url: "https://lapyaewoon.phoenixgroupint.com/",
+        },
+        {
+          key: "invoice",
+          title: "請求書作成ツール（HTML/CSS/JS）",
+          description:
+            "印刷用請求書を作成。商品管理と合計/税の自動計算に対応。",
+          tech: ["HTML", "CSS", "JavaScript"],
+          category: "フロントエンド",
+          image:
+            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+          url: "https://invoice-app-theta-six.vercel.app/",
+        },
+        {
+          key: "todo",
+          title: "To Do リスト（HTML/CSS/JS）",
+          description:
+            "タスクのカウントや一括操作に対応したシンプルなToDoアプリ。",
+          tech: ["HTML", "CSS", "JavaScript"],
+          category: "フロントエンド",
+          image:
+            "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+          url: "https://to-do-list-app-deployment.vercel.app/",
+        },
+      ],
     },
     experience: {
       title: "職歴",
+      jobsTitle: "職務経験",
+      educationTitle: "学歴",
       current: "現在のポジション",
       previous: "以前の経験",
       experiences: {
         researcher: {
           title: "研究員",
-          company: "鹿島建設株式会社",
+          company:
+            "派遣元：エンチャント株式会社 ／ 派遣先：鹿島建設株式会社 技術研究所（GI基金CNコンクリートPJ）",
           location: "東京都, 日本",
-          period: "2024年 - 現在",
+          period: "2024年9月 - 現在",
           description:
-            "建設分野のCO₂削減研究を推進し、機材調達管理やデータ分析・報告を担当。環境課題に対する実践的なソリューションを検討・実装。",
+            "見積対応、設備の調達管理、標準化・安全の整備、研究支援（センサー設置補助・データ整理/グラフ化）、関係者調整などを担当。",
           highlights: [
-            "CO₂削減の研究・分析",
-            "機材調達管理",
-            "データ分析・報告書作成",
-            "持続可能技術の検討・実装",
+            "見積依頼対応・必要書類作成（Excel/Word/PowerPoint）",
+            "設備の調達管理（発注〜納期調整、搬入計画サポート）",
+            "標準化・安全（作業標準・手順書、KYの洗い出し/是正→再確認）",
+            "研究支援（センサー設置補助、計測データ整理・グラフ化（Excel）、報告資料作成）",
+            "関係者調整（日次の連携・報連相）",
+            "技術日本語の読み書き能力向上、Excelによるデータ分析",
+            "相見積・安全管理ルール整備によるコスト削減とリスク低減",
+          ],
+        },
+        coordinator: {
+          title: "コーディネーター",
+          company: "Career Tech Japan（送り出し機関）",
+          location: "日本",
+          period: "2023年12月 - 2024年6月",
+          description:
+            "日本企業とミャンマー人候補者のマッチング、書類準備・翻訳、面接調整、各種ビザ申請書類の準備支援を担当。",
+          highlights: [
+            "マッチング業務・面接調整・通訳",
+            "書類準備・作成・翻訳（日本語⇔英語/ミャンマー語）",
+            "技能実習・特定技能のビザ申請書類サポート",
+            "事前ガイダンス、渡航準備の支援",
+            "ビジネスレベルの日本語運用経験",
           ],
         },
         teacher: {
-          title: "日本語講師",
-          company: "各種教育機関",
-          location: "ミャンマー / 日本",
-          period: "2022年 - 2024年",
+          title: "日本語教師（N5～N3）",
+          company: "Myanmar Unity Employment Agency",
+          location: "ミャンマー",
+          period: "2023年4月 - 2023年12月",
           description:
-            "留学生向け日本語教育を担当。並行してWeb開発スキルを習得し、国際的な開発チームに必要なコミュニケーション力と文化理解を強化。",
+            "実習生向けに文法・会話・漢字を指導。授業資料の作成・改善、進捗管理、テスト・評価・面談を実施。",
           highlights: [
-            "異文化コミュニケーション",
-            "カリキュラム開発",
-            "学生メンタリング",
-            "言語教育学",
+            "N5〜N3レベルの教育（会話中心）",
+            "授業資料の作成・改善（Google Slides・PDF）",
+            "進捗管理・学習報告・個別指導",
+            "月次テスト・評価・面談対応",
+            "教育現場でのリーダーシップ",
           ],
         },
         student: {

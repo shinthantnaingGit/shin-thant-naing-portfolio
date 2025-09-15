@@ -1,30 +1,29 @@
-
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Mail, MapPin, Clock, Github, Linkedin, Send } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, MapPin, Clock, Github, Linkedin, Send } from "lucide-react";
 
 export default function Contact({ messages }) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
   const contactInfo = [
@@ -32,20 +31,20 @@ export default function Contact({ messages }) {
       icon: MapPin,
       label: messages.contact.info.location,
       value: "Tokyo, Japan",
-      color: "from-purple-600 to-blue-600"
+      color: "from-purple-600 to-blue-600",
     },
     {
       icon: Clock,
       label: messages.contact.info.response,
       value: "Within 24 hours",
-      color: "from-green-600 to-blue-600"
+      color: "from-green-600 to-blue-600",
     },
     {
       icon: Mail,
       label: messages.contact.info.available,
       value: "Full-time opportunities",
-      color: "from-orange-600 to-red-600"
-    }
+      color: "from-orange-600 to-red-600",
+    },
   ];
 
   const socialLinks = [
@@ -53,20 +52,20 @@ export default function Contact({ messages }) {
       icon: Github,
       label: "GitHub",
       url: "#",
-      color: "hover:text-purple-400"
+      color: "hover:text-purple-400",
     },
     {
       icon: Linkedin,
-      label: "LinkedIn", 
+      label: "LinkedIn",
       url: "#",
-      color: "hover:text-blue-400"
+      color: "hover:text-blue-400",
     },
     {
       icon: Mail,
       label: "Email",
       url: "mailto:shinthantnaing@example.com",
-      color: "hover:text-green-400"
-    }
+      color: "hover:text-green-400",
+    },
   ];
 
   const containerVariants = {
@@ -75,9 +74,9 @@ export default function Contact({ messages }) {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
+        delayChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -85,12 +84,15 @@ export default function Contact({ messages }) {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+    <section
+      id="contact"
+      className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-mt-24 sm:scroll-mt-28"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           variants={containerVariants}
@@ -113,8 +115,10 @@ export default function Contact({ messages }) {
             {/* Contact Information */}
             <motion.div variants={itemVariants} className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
-                
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Get in Touch
+                </h3>
+
                 {/* Contact Info Cards */}
                 <div className="space-y-4">
                   {contactInfo.map((info, index) => (
@@ -123,11 +127,15 @@ export default function Contact({ messages }) {
                       whileHover={{ x: 10, scale: 1.02 }}
                       className="bg-slate-800/30 backdrop-blur-sm border border-purple-500/20 rounded-xl p-6 flex items-center space-x-4"
                     >
-                      <div className={`bg-gradient-to-br ${info.color} p-3 rounded-xl`}>
+                      <div
+                        className={`bg-gradient-to-br ${info.color} p-3 rounded-xl`}
+                      >
                         <info.icon className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="text-gray-400 text-sm font-medium">{info.label}</p>
+                        <p className="text-gray-400 text-sm font-medium">
+                          {info.label}
+                        </p>
                         <p className="text-white font-semibold">{info.value}</p>
                       </div>
                     </motion.div>
@@ -137,7 +145,9 @@ export default function Contact({ messages }) {
 
               {/* Social Links */}
               <div>
-                <h4 className="text-lg font-semibold text-white mb-4">Connect with me</h4>
+                <h4 className="text-lg font-semibold text-white mb-4">
+                  Connect with me
+                </h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
@@ -159,12 +169,12 @@ export default function Contact({ messages }) {
               <motion.div
                 animate={{
                   rotate: [0, 360],
-                  scale: [1, 1.1, 1]
+                  scale: [1, 1.1, 1],
                 }}
                 transition={{
                   duration: 20,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "linear",
                 }}
                 className="relative w-32 h-32 mx-auto opacity-20"
               >
@@ -248,12 +258,12 @@ export default function Contact({ messages }) {
           animate={{
             x: [0, 100, 0],
             y: [0, -100, 0],
-            rotate: [0, 180, 360]
+            rotate: [0, 180, 360],
           }}
           transition={{
             duration: 30,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
           className="absolute top-20 left-20 w-6 h-6 bg-purple-400/20 rounded-full blur-sm"
         />
@@ -261,12 +271,12 @@ export default function Contact({ messages }) {
           animate={{
             x: [0, -80, 0],
             y: [0, 80, 0],
-            rotate: [360, 180, 0]
+            rotate: [360, 180, 0],
           }}
           transition={{
             duration: 25,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
           className="absolute bottom-20 right-20 w-4 h-4 bg-blue-400/30 rounded-full blur-sm"
         />
