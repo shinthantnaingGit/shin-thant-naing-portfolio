@@ -69,19 +69,10 @@ export default function Hero({ messages }) {
     },
   };
 
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 1, ease: "easeOut" },
-    },
-  };
-
   return (
     <section
       id="home"
-      className="relative overflow-hidden min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 relative scroll-mt-24 sm:scroll-mt-28"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 scroll-mt-24 sm:scroll-mt-28"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -115,165 +106,90 @@ export default function Hero({ messages }) {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative overflow-hidden z-10 max-w-7xl mx-auto"
+        className="relative z-10 max-w-4xl mx-auto text-center"
       >
-        <div className="flex flex-col lg:flex-row overflow-hidden gap-12 lg:gap-16 items-center">
-          
-          {/* Left Side - Content */}
-          <motion.div variants={itemVariants} className="lg:order-1 lg:flex-1 min-w-0 text-center lg:text-left">
-            {/* Name */}
-            <motion.h1
-              variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6"
+        {/* Profile Image Area */}
+        <motion.div variants={itemVariants} className="mb-8">
+          {/* Profile Image */}
+          <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl">
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
+              src="/profile.png"
+              alt={messages.hero.name}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                // Fallback if image doesn't load
+                e.target.style.display = "none";
+                e.target.nextSibling.style.display = "flex";
+              }}
+            />
+            {/* Fallback content if image fails to load */}
+            <div
+              className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800 rounded-full flex items-center justify-center text-6xl font-bold text-purple-400"
+              style={{ display: "none" }}
             >
-              {messages.hero.name}
-            </motion.h1>
-
-            {/* Typing Animation */}
-            <motion.div variants={itemVariants} className="mb-6 overflow-hidden max-w-full">
-              <span
-                ref={typedRef}
-                className="block overflow-hidden max-w-full whitespace-nowrap text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
-              >
-                {messages.hero.title}
-              </span>
-            </motion.div>
-
-            {/* Description */}
-            <motion.p
-              variants={itemVariants}
-              className="text-lg sm:text-xl text-gray-300 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
-            >
-              {messages.hero.description}
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8"
-            >
-              <a href="#projects">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  {messages.hero.cta}
-                </Button>
-              </a>
-              <a href="#contact">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-purple-500/50 text-purple-300 hover:bg-purple-900/30 px-8 py-3 text-lg font-semibold"
-                >
-                  <Mail className="w-5 h-5 mr-2" />
-                  {messages.hero.contact}
-                </Button>
-              </a>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Side - Profile Image */}
-          <motion.div 
-            variants={imageVariants} 
-            className="lg:order-2 flex justify-center lg:justify-end flex-shrink-0"
-          >
-            <div className="relative">
-              {/* Outer Rotating Ring */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background: "conic-gradient(from 0deg, #8b5cf6, #06b6d4, #8b5cf6, #06b6d4, #8b5cf6)",
-                  padding: "4px",
-                  width: "320px",
-                  height: "320px"
-                }}
-              >
-                <div className="w-full h-full bg-slate-900 rounded-full" />
-              </motion.div>
-
-              {/* Middle Ring */}
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-2 rounded-full bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-purple-500/20 p-1"
-              >
-                <div className="w-full h-full bg-slate-900/50 rounded-full" />
-              </motion.div>
-
-              {/* Inner Glow Ring */}
-              <div className="absolute inset-4 rounded-full bg-gradient-to-r from-purple-600/30 via-blue-600/30 to-purple-600/30 p-2">
-                <div className="w-full h-full bg-slate-900 rounded-full" />
-              </div>
-
-              {/* Profile Image */}
-              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl">
-                <motion.img
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                  src="/profile.png"
-                  alt={messages.hero.name}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    // Fallback if image doesn't load
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-                {/* Fallback content if image fails to load */}
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800 rounded-full flex items-center justify-center text-6xl font-bold text-purple-400" style={{ display: 'none' }}>
-                  STN
-                </div>
-              </div>
-
-              {/* Floating Particles */}
-              <motion.div
-                animate={{
-                  y: [0, -20, 0],
-                  opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  delay: 0,
-                }}
-                className="absolute -top-4 -right-4 w-3 h-3 bg-purple-400 rounded-full blur-sm"
-              />
-              <motion.div
-                animate={{
-                  y: [0, -15, 0],
-                  opacity: [0.3, 0.8, 0.3],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  delay: 1,
-                }}
-                className="absolute -bottom-2 -left-6 w-2 h-2 bg-blue-400 rounded-full blur-sm"
-              />
-              <motion.div
-                animate={{
-                  y: [0, -25, 0],
-                  opacity: [0.4, 0.9, 0.4],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  delay: 2,
-                }}
-                className="absolute top-8 -left-8 w-4 h-4 bg-purple-300 rounded-full blur-sm"
-              />
+              STN
             </div>
-          </motion.div>
+          </div>
+        </motion.div>
 
-        </div>
+        {/* Name */}
+        <motion.h1
+          variants={itemVariants}
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4"
+        >
+          {messages.hero.name}
+        </motion.h1>
 
-        {/* Scroll Indicator - Centered at bottom */}
+        {/* Typing Animation */}
+        <motion.div variants={itemVariants} className="mb-6">
+          <span
+            ref={typedRef}
+            className="text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+          >
+            {messages.hero.title}
+          </span>
+          <span className="animate-pulse text-purple-400 text-2xl">|</span>
+        </motion.div>
+
+        {/* Description */}
+        <motion.p
+          variants={itemVariants}
+          className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed"
+        >
+          {messages.hero.description}
+        </motion.p>
+
+        {/* CTA Buttons */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center mt-16 lg:mt-20"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+        >
+          <a href="#projects">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 text-lg font-semibold"
+            >
+              {messages.hero.cta}
+            </Button>
+          </a>
+          <a href="#contact">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-purple-500/50 text-purple-300 hover:bg-purple-900/30 px-8 py-3 text-lg font-semibold"
+            >
+              <Mail className="w-5 h-5 mr-2" />
+              {messages.hero.contact}
+            </Button>
+          </a>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col items-center"
         >
           <p className="text-sm text-gray-400 mb-4">Scroll to explore</p>
           <motion.a
