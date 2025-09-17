@@ -91,11 +91,12 @@ export const messages = {
           description:
             "Inventory CRUD with real-time tracking, professional invoice generation and management, and dashboard analytics (revenue, sales, top products). Bilingual-ready (EN/JA).",
           tech: [
-            "Next.js",
+            "TailwindCSS",
             "React",
+            "Next.js",
             "Laravel API",
             "Chart.js",
-            "TailwindCSS",
+            "Framer Motion",
             "SWR",
             "Zustand",
           ],
@@ -121,7 +122,7 @@ export const messages = {
           title: "La Pyae Woon Iron & Steel Trading",
           description:
             "Business portfolio with custom branding and smooth interactions.",
-          tech: ["React", "Framer Motion", "CSS"],
+          tech: ["React", "Tailwind CSS", "Framer Motion"],
           category: "Portfolio",
           image:
             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
@@ -132,7 +133,7 @@ export const messages = {
           title: "Invoice Generation Tool (HTML/CSS/JS)",
           description:
             "Create printable invoices, manage items, and see live totals with tax.",
-          tech: ["HTML", "CSS", "JavaScript"],
+          tech: ["HTML", "Tailwind CSS", "JavaScript"],
           category: "Frontend",
           image:
             "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
@@ -143,7 +144,7 @@ export const messages = {
           title: "To Do List App (HTML/CSS/JS)",
           description:
             "Clean todo app with counters and quick actions to mark/clear tasks.",
-          tech: ["HTML", "CSS", "JavaScript"],
+          tech: ["HTML", "Tailwind CSS", "JavaScript"],
           category: "Frontend",
           image:
             "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
@@ -349,11 +350,12 @@ export const messages = {
           description:
             "在庫CRUDとリアルタイム追跡、プロフェッショナルな請求書の作成・管理、ダッシュボード分析（収益・売上・トップ商品）。英日バイリンガル対応。",
           tech: [
-            "Next.js",
+            "TailwindCSS",
             "React",
+            "Next.js",
             "Laravel API",
             "Chart.js",
-            "TailwindCSS",
+            "Framer Motion",
             "SWR",
             "Zustand",
           ],
@@ -379,7 +381,7 @@ export const messages = {
           title: "La Pyae Woon Iron & Steel Trading",
           description:
             "ロゴ/ブランディングを含む事業用ポートフォリオ。滑らかなアニメーション。",
-          tech: ["React", "Framer Motion", "CSS"],
+          tech: ["React", "Tailwind CSS", "Framer Motion"],
           category: "ポートフォリオ",
           image:
             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
@@ -390,7 +392,7 @@ export const messages = {
           title: "請求書作成ツール（HTML/CSS/JS）",
           description:
             "印刷用請求書を作成。商品管理と合計/税の自動計算に対応。",
-          tech: ["HTML", "CSS", "JavaScript"],
+          tech: ["HTML", "Tailwind CSS", "JavaScript"],
           category: "フロントエンド",
           image:
             "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
@@ -401,7 +403,7 @@ export const messages = {
           title: "To Do リスト（HTML/CSS/JS）",
           description:
             "タスクのカウントや一括操作に対応したシンプルなToDoアプリ。",
-          tech: ["HTML", "CSS", "JavaScript"],
+          tech: ["HTML", "Tailwind CSS", "JavaScript"],
           category: "フロントエンド",
           image:
             "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
