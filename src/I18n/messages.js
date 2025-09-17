@@ -231,7 +231,7 @@ export const messages = {
           title: "Mechatronics Engineering Studies",
           company: "University Education",
           location: "Myanmar",
-          period: "2018 - 2022",
+          period: "2016 - 2023",
           description:
             "Built strong analytical and problem-solving skills in mechatronics, systems thinking, and documentation—now applied to software development.",
           highlights: [
@@ -490,7 +490,7 @@ export const messages = {
           title: "メカトロニクス工学専攻",
           company: "大学教育",
           location: "ミャンマー",
-          period: "2018年 - 2022年",
+          period: "2016年 - 2023年",
           description:
             "システム思考・自動化・技術文書の基礎を習得し、課題解決力を強化。現在のソフトウェア開発へ応用。",
           highlights: [
