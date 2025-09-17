@@ -153,8 +153,8 @@ export const messages = {
       ],
     },
     experience: {
-      title: "Professional Experience",
-      jobsTitle: "Job Experience",
+      title: "My Journey",
+      jobsTitle: "Work",
       educationTitle: "Education",
       current: "Current Position",
       previous: "Previous Experience",
@@ -412,8 +412,8 @@ export const messages = {
       ],
     },
     experience: {
-      title: "職歴",
-      jobsTitle: "職務経験",
+      title: "私の歩み",
+      jobsTitle: "職歴",
       educationTitle: "学歴",
       current: "現在のポジション",
       previous: "以前の経験",

@@ -100,7 +100,7 @@ export default function Experience({ messages }) {
           initial="hidden"
           // whileInView="visible"
           animate="visible"
-          // viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           {/* Section Title */}
           <motion.div variants={itemVariants} className="text-center mb-16">
