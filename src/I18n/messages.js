@@ -157,6 +157,8 @@ export const messages = {
       educationTitle: "Education",
       current: "Current Position",
       previous: "Previous Experience",
+      keyResponsibilities: "Key Responsibilities:",
+      currentStatus: "Current",
       experiences: {
         researcher: {
           title: "Research Engineer",
@@ -179,7 +181,7 @@ export const messages = {
         internship: {
           title: "Frontend Web Developer",
           company: "MMS IT",
-          location: "Remote",
+          location: "Myanmar・Remote",
           period: "Jul 2025 - Present · 3 mos",
           description:
             "Participated in web development projects as a frontend developer intern, contributing to the creation of the Inventura App and supporting current company projects with modern web technologies.",
@@ -413,6 +415,8 @@ export const messages = {
       educationTitle: "学歴",
       current: "現在のポジション",
       previous: "以前の経験",
+      keyResponsibilities: "主要業務:",
+      currentStatus: "現職",
       experiences: {
         researcher: {
           title: "研究員",
@@ -435,7 +439,7 @@ export const messages = {
         internship: {
           title: "フロントエンドWeb開発者",
           company: "MMS IT",
-          location: "リモート",
+          location: "ミャンマー・リモート",
           period: "2025年7月 - 現在 · 3ヶ月",
           description:
             "フロントエンド開発者インターンとしてWebプロジェクトに参加し、Inventura Appの作成と会社の現在進行中のプロジェクトを最新のWeb技術でサポートしました。",

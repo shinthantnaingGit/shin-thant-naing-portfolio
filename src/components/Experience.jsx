@@ -29,7 +29,7 @@ export default function Experience({ messages }) {
       type: "Internship",
       description: messages.experience.experiences.internship.description,
       highlights: messages.experience.experiences.internship.highlights,
-      current: false,
+      current: true,
     },
     {
       title: messages.experience.experiences.coordinator.title,
@@ -180,7 +180,7 @@ export default function Experience({ messages }) {
                               transition={{ duration: 2, repeat: Infinity }}
                               className="px-2 sm:px-3 py-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white text-xs sm:text-sm font-medium w-fit"
                             >
-                              Current
+                              {messages.experience.currentStatus}
                             </motion.div>
                           )}
                         </div>
@@ -194,7 +194,7 @@ export default function Experience({ messages }) {
                       {/* Highlights */}
                       <div>
                         <h4 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
-                          Key Responsibilities:
+                          {messages.experience.keyResponsibilities}
                         </h4>
                         <div className="grid grid-cols-1 gap-1.5 sm:gap-2">
                           {exp.highlights.map((highlight, hIndex) => (
