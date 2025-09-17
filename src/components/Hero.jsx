@@ -81,7 +81,7 @@ export default function Hero({ messages }) {
   return (
     <section
       id="home"
-      className="relative overflow-hidden min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 relative scroll-mt-24 sm:scroll-mt-28"
+      className="relative overflow-hidden min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24 sm:scroll-mt-28"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -117,10 +117,10 @@ export default function Hero({ messages }) {
         animate="visible"
         className="relative z-10 max-w-7xl mx-auto"
       >
-        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Side - Content */}
-          <motion.div variants={itemVariants} className="lg:order-1 lg:col-span-2 text-center lg:text-left">
+          <motion.div variants={itemVariants} className="lg:order-1 text-center lg:text-left">
             {/* Name */}
             <motion.h1
               variants={itemVariants}
@@ -130,14 +130,21 @@ export default function Hero({ messages }) {
             </motion.h1>
 
             {/* Typing Animation */}
-            <motion.div variants={itemVariants} className="mb-6">
-              <span
-                ref={typedRef}
-                className="text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
-              >
-                {messages.hero.title}
-              </span>
-              <span className="animate-pulse text-purple-400 text-2xl">|</span>
+            <motion.div variants={itemVariants} className="mb-6 h-16 flex items-center justify-center lg:justify-start overflow-hidden">
+              <div className="max-w-full overflow-hidden">
+                <span
+                  ref={typedRef}
+                  className="text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent whitespace-nowrap"
+                  style={{ 
+                    minHeight: '1.5em', 
+                    display: 'inline-block',
+                    maxWidth: '100%'
+                  }}
+                >
+                  {messages.hero.title}
+                </span>
+                <span className="animate-pulse text-purple-400 text-2xl ml-1">|</span>
+              </div>
             </motion.div>
 
             {/* Description */}
