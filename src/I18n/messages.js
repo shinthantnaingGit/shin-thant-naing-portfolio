@@ -11,7 +11,7 @@ export const messages = {
     hero: {
       name: "Shin Thant Naing",
       title: "Frontend Web Developer & Engineer",
-      subtitle: "Precision Engineering Meets Modern Web Development",
+      subtitle: "Engineering Logic Meets Creative Code",
       description:
         "Building responsive, user-focused applications while leveraging engineering principles for optimal performance",
       cta: "See My Work",
@@ -270,7 +270,7 @@ export const messages = {
     },
     hero: {
       name: "Shin Thant Naing",
-      title: "フロントエンドウェブ開発者・技術者",
+      title: "フロントエンドウェブ開発者",
       subtitle: "精密工学技術と最新ウェブ開発技術の統合",
       description:
         "工学的思考とウェブ開発スキルを組み合わせ、高性能でユーザビリティの高いアプリケーション開発を行っています",
