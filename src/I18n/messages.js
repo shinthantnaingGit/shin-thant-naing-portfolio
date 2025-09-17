@@ -176,6 +176,24 @@ export const messages = {
             "Achieved cost reductions via competitive quotations; enhanced safety rules",
           ],
         },
+        internship: {
+          title: "Frontend Web Developer",
+          company: "MMS IT",
+          location: "Odawara, Kanagawa, Japan · Remote",
+          period: "Jul 2025 - Present · 3 mos",
+          description:
+            "Participated in web development projects as a frontend developer intern, contributing to the creation of the Inventura App and supporting current company projects with modern web technologies.",
+          highlights: [
+            "Developed the Inventura App using React.js and modern web technologies",
+            "Collaborated on current company projects as a contributing team member",
+            "Implemented responsive designs using HTML5, CSS, and Tailwind CSS",
+            "Integrated REST APIs and conducted API testing using Postman",
+            "Worked with Next.js for server-side rendering and optimized performance",
+            "Utilized Git and GitHub for version control and collaborative development",
+            "Developed frontend components based on provided design specifications",
+            "Applied JavaScript and Node.js for full-stack development tasks",
+          ],
+        },
         coordinator: {
           title: "Coordinator",
           company: "Career Tech Japan",
@@ -412,6 +430,24 @@ export const messages = {
             "関係者調整（日次の連携・報連相）",
             "技術日本語の読み書き能力向上、Excelによるデータ分析",
             "相見積・安全管理ルール整備によるコスト削減とリスク低減",
+          ],
+        },
+        internship: {
+          title: "フロントエンドWeb開発者",
+          company: "MMS IT",
+          location: "神奈川県小田原市・リモート",
+          period: "2025年7月 - 現在 · 3ヶ月",
+          description:
+            "フロントエンド開発者インターンとしてWebプロジェクトに参加し、Inventura Appの作成と会社の現在進行中のプロジェクトを最新のWeb技術でサポートしました。",
+          highlights: [
+            "React.jsと最新のWeb技術を使用してInventura Appを開発",
+            "チームメンバーとして会社の現在進行中のプロジェクトに貢献",
+            "HTML5、CSS、Tailwind CSSを使用してレスポンシブデザインを実装",
+            "REST APIの統合とPostmanを使用したAPIテストを実施",
+            "サーバーサイドレンダリングとパフォーマンス最適化にNext.jsを活用",
+            "バージョン管理と共同開発にGitとGitHubを使用",
+            "提供されたデザイン仕様に基づいてフロントエンドコンポーネントを開発",
+            "フルスタック開発タスクにJavaScriptとNode.jsを適用",
           ],
         },
         coordinator: {
