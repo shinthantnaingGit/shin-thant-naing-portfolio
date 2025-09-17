@@ -42,7 +42,8 @@
 }
 
 body {
-  overflow-y: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable both-edges;
 }
 
 :root {
