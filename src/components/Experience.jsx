@@ -147,11 +147,18 @@ export default function Experience({ messages }) {
           </motion.div>
 
           {/* Jobs Timeline */}
-          <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait">
             {activeTab === "jobs" && (
-              <motion.div variants={itemVariants} className="mb-16">
+              <motion.div
+                key="jobs"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 30 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="mb-16"
+              >
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                  <Briefcase className="w-5 h-5 text-purple-400" />{" "}
+                  <Briefcase className="w-5 h-5 text-purple-400" />
                   {messages.experience.jobsTitle}
                 </h3>
                 <div className="relative">
@@ -160,7 +167,10 @@ export default function Experience({ messages }) {
                     {jobExperiences.map((exp, index) => (
                       <motion.div
                         key={index}
-                        variants={itemVariants}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ delay: index * 0.1, duration: 0.5 }}
                         className="relative flex items-start"
                       >
                         {/* Timeline Node */}
@@ -199,9 +209,9 @@ export default function Experience({ messages }) {
                           {/* Header */}
                           <div className="flex flex-col space-y-2 sm:space-y-3 mb-3 sm:mb-4">
                             <div>
-                              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2">
+                              <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2">
                                 {exp.title}
-                              </h3>
+                              </h4>
                               <div className="flex items-center text-purple-400 font-semibold mb-2 text-sm sm:text-base">
                                 <Building className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                                 {exp.company}
@@ -236,16 +246,17 @@ export default function Experience({ messages }) {
 
                           {/* Highlights */}
                           <div>
-                            <h4 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
+                            <h5 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                               {messages.experience.keyResponsibilities}
-                            </h4>
+                            </h5>
                             <div className="grid grid-cols-1 gap-1.5 sm:gap-2">
                               {exp.highlights.map((highlight, hIndex) => (
                                 <motion.div
                                   key={hIndex}
                                   initial={{ opacity: 0, x: -20 }}
                                   whileInView={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: hIndex * 0.1 }}
+                                  viewport={{ once: true }}
+                                  transition={{ delay: hIndex * 0.05 }}
                                   className="flex items-center text-gray-300 text-sm"
                                 >
                                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mr-2 sm:mr-3 flex-shrink-0" />
@@ -266,11 +277,16 @@ export default function Experience({ messages }) {
               </motion.div>
             )}
 
-            {/* Education Timeline */}
             {activeTab === "education" && (
-              <motion.div variants={itemVariants}>
+              <motion.div
+                key="education"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 30 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                  <GraduationCap className="w-5 h-5 text-purple-400" />{" "}
+                  <GraduationCap className="w-5 h-5 text-purple-400" />
                   {messages.experience.educationTitle}
                 </h3>
                 <div className="relative">
@@ -279,17 +295,18 @@ export default function Experience({ messages }) {
                     {educationExperiences.map((exp, index) => (
                       <motion.div
                         key={index}
-                        variants={itemVariants}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ delay: index * 0.1, duration: 0.5 }}
                         className="relative flex items-start"
                       >
                         {/* Timeline Node */}
                         <motion.div
                           whileHover={{ scale: 1.2 }}
-                          className={`relative z-10 flex items-center justify-center w-8 h-8 sm:w-16 sm:h-16 rounded-full border-2 sm:border-4 ${"bg-slate-800 border-purple-500/50"}`}
+                          className="relative z-10 flex items-center justify-center w-8 h-8 sm:w-16 sm:h-16 rounded-full border-2 sm:border-4 bg-slate-800 border-purple-500/50"
                         >
-                          <GraduationCap
-                            className={`w-3 h-3 sm:w-6 sm:h-6 text-purple-400`}
-                          />
+                          <GraduationCap className="w-3 h-3 sm:w-6 sm:h-6 text-purple-400" />
                         </motion.div>
 
                         {/* Content */}
@@ -300,9 +317,9 @@ export default function Experience({ messages }) {
                           {/* Header */}
                           <div className="flex flex-col space-y-2 sm:space-y-3 mb-3 sm:mb-4">
                             <div>
-                              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2">
+                              <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2">
                                 {exp.title}
-                              </h3>
+                              </h4>
                               <div className="flex items-center text-purple-400 font-semibold mb-2 text-sm sm:text-base">
                                 <Building className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                                 {exp.company}
@@ -328,16 +345,17 @@ export default function Experience({ messages }) {
 
                           {/* Highlights */}
                           <div>
-                            <h4 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
+                            <h5 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                               Key Courses/Highlights:
-                            </h4>
+                            </h5>
                             <div className="grid grid-cols-1 gap-1.5 sm:gap-2">
                               {exp.highlights.map((highlight, hIndex) => (
                                 <motion.div
                                   key={hIndex}
                                   initial={{ opacity: 0, x: -20 }}
                                   whileInView={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: hIndex * 0.1 }}
+                                  viewport={{ once: true }}
+                                  transition={{ delay: hIndex * 0.05 }}
                                   className="flex items-center text-gray-300 text-sm"
                                 >
                                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mr-2 sm:mr-3 flex-shrink-0" />

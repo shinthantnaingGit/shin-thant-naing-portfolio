@@ -41,10 +41,6 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-body {
-  overflow-y: auto;
-  scrollbar-gutter: stable both-edges;
-}
 
 :root {
   --radius: 0.625rem;

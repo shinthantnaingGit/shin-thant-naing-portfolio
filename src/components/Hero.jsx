@@ -115,9 +115,9 @@ export default function Hero({ messages }) {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative overflow-hidden z-10 max-w-7xl mx-auto"
+        className="relative z-10 max-w-7xl mx-auto"
       >
-        <div className="flex flex-col lg:flex-row overflow-hidden gap-12 lg:gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           
           {/* Left Side - Content */}
           <motion.div variants={itemVariants} className="lg:order-1 lg:flex-1 min-w-0 text-center lg:text-left">
@@ -130,10 +130,9 @@ export default function Hero({ messages }) {
             </motion.h1>
 
             {/* Typing Animation */}
-            <motion.div variants={itemVariants} className="mb-6 overflow-hidden max-w-full">
+            <motion.div variants={itemVariants} className="mb-6 max-w-full">
               <span
-                ref={typedRef}
-                className="block overflow-hidden max-w-full whitespace-nowrap text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+                className="block max-w-full whitespace-nowrap text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
               >
                 {messages.hero.title}
               </span>
