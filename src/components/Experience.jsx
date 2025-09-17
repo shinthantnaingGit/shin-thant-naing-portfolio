@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Building,
@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 
 export default function Experience({ messages }) {
+  const [activeTab, setActiveTab] = useState("jobs");
   const experiences = [
     {
       title: messages.experience.experiences.researcher.title,
@@ -108,7 +109,40 @@ export default function Experience({ messages }) {
             <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full" />
           </motion.div>
 
+          {/* Toggle */}
+          <motion.div variants={itemVariants} className="mb-10 flex justify-center">
+            <div className="inline-flex items-center bg-slate-800/60 border border-purple-500/30 rounded-full p-1">
+              <button
+                type="button"
+                aria-pressed={activeTab === "jobs"}
+                onClick={() => setActiveTab("jobs")}
+                className={`flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full text-sm sm:text-base font-medium transition focus:outline-none focus:ring-2 focus:ring-blue-500/50 ${
+                  activeTab === "jobs"
+                    ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow"
+                    : "text-gray-300 hover:text-white"
+                }`}
+              >
+                <Briefcase className="w-4 h-4" />
+                {messages.experience.jobsTitle}
+              </button>
+              <button
+                type="button"
+                aria-pressed={activeTab === "education"}
+                onClick={() => setActiveTab("education")}
+                className={`flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full text-sm sm:text-base font-medium transition focus:outline-none focus:ring-2 focus:ring-blue-500/50 ${
+                  activeTab === "education"
+                    ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow"
+                    : "text-gray-300 hover:text-white"
+                }`}
+              >
+                <GraduationCap className="w-4 h-4" />
+                {messages.experience.educationTitle}
+              </button>
+            </div>
+          </motion.div>
+
           {/* Jobs Timeline */}
+          {activeTab === "jobs" && (
           <motion.div variants={itemVariants} className="mb-16">
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
               <Briefcase className="w-5 h-5 text-purple-400" />{" "}
@@ -221,8 +255,10 @@ export default function Experience({ messages }) {
               </div>
             </div>
           </motion.div>
+          )}
 
           {/* Education Timeline */}
+          {activeTab === "education" && (
           <motion.div variants={itemVariants}>
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
               <GraduationCap className="w-5 h-5 text-purple-400" />{" "}
@@ -311,6 +347,7 @@ export default function Experience({ messages }) {
               </div>
             </div>
           </motion.div>
+          )}
         </motion.div>
       </div>
     </section>
