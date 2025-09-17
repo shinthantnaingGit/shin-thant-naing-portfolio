@@ -131,7 +131,10 @@ export default function Projects({ messages }) {
               .map((project, index) => (
                 <motion.div
                   key={index}
-                  variants={itemVariants}
+                  initial={{ opacity: 0, y: -30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 30 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                   whileHover={{ y: -10, scale: 1.02 }}
                   className="group bg-slate-800/30 backdrop-blur-sm border border-purple-500/20 rounded-2xl overflow-hidden"
                 >
