@@ -14,15 +14,9 @@ export default function About({ messages = {} }) {
   const t = messages?.about || {};
   const s = t.stats || {};
 
-  // Animations
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.18, delayChildren: 0.08 },
-    },
-  };
-  const item = {
+  // Define variants for a single item.
+  // This will be applied to each stat card, skill chip, and language item.
+  const itemVariants = {
     hidden: { opacity: 0, y: 36 },
     visible: {
       opacity: 1,
@@ -73,8 +67,6 @@ export default function About({ messages = {} }) {
   ];
 
   // Languages (prefer messages.about.languages if you later add it; else fallback)
-  // Shape if provided in messages:
-  // about.languages = [{ name: "Japanese", level: "JLPT N2", percent: 70 }, ...]
   const languageItems =
     t.languages && Array.isArray(t.languages) && t.languages.length > 0
       ? t.languages
@@ -96,14 +88,14 @@ export default function About({ messages = {} }) {
       />
 
       <div className="mx-auto max-w-6xl">
+        {/* Main content container with 'whileInView' */}
         <motion.div
-          variants={container}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.12 }}
         >
           {/* Title */}
-          <motion.div variants={item} className="mb-14 text-center">
+          <motion.div variants={itemVariants} className="mb-14 text-center">
             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
               {t.title || "About Me"}
             </h2>
@@ -113,7 +105,7 @@ export default function About({ messages = {} }) {
           {/* Grid */}
           <div className="grid items-start gap-10 lg:grid-cols-12">
             {/* Left: Narrative + Highlights */}
-            <motion.div variants={item} className="lg:col-span-7">
+            <motion.div variants={itemVariants} className="lg:col-span-7">
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-800/50 p-8 backdrop-blur-sm">
                 {/* contained inner glow */}
                 <div
@@ -145,7 +137,14 @@ export default function About({ messages = {} }) {
                   {/* Current Job */}
                   <div className="space-y-3 text-gray-300">
                     {(t.highlights?.job || []).map((row, i) => (
-                      <div key={`job-${i}`} className="flex items-start">
+                      <motion.div
+                        key={`job-${i}`}
+                        variants={itemVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        className="flex items-start"
+                      >
                         <div
                           className={`mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full ${row.dot}`}
                         />
@@ -155,14 +154,21 @@ export default function About({ messages = {} }) {
                           </span>{" "}
                           {row.v}
                         </p>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
 
                   {/* Projects */}
                   <div className="space-y-3 text-gray-300">
                     {(t.highlights?.projects || []).map((row, i) => (
-                      <div key={`proj-${i}`} className="flex items-start">
+                      <motion.div
+                        key={`proj-${i}`}
+                        variants={itemVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        className="flex items-start"
+                      >
                         <div
                           className={`mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full ${row.dot}`}
                         />
@@ -172,7 +178,7 @@ export default function About({ messages = {} }) {
                           </span>{" "}
                           {row.v}
                         </p>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
@@ -183,13 +189,17 @@ export default function About({ messages = {} }) {
                     Core Skills
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {skills.map((s) => (
-                      <span
-                        key={s}
+                    {skills.map((s, i) => (
+                      <motion.span
+                        key={i}
+                        variants={itemVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
                         className="rounded-full border border-white/10 bg-slate-900/40 px-3 py-1 text-xs text-gray-200"
                       >
                         {s}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                 </div>
@@ -200,9 +210,13 @@ export default function About({ messages = {} }) {
                     {t.languagesTitle || "Languages / 言語"}
                   </h4>
                   <ul className="space-y-3">
-                    {languageItems.map((lang) => (
-                      <li
-                        key={lang.name}
+                    {languageItems.map((lang, i) => (
+                      <motion.li
+                        key={i}
+                        variants={itemVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
                         className="rounded-xl border border-white/10 bg-slate-900/40 p-3"
                         aria-label={`${lang.name} ${lang.level || ""}`}
                       >
@@ -235,7 +249,7 @@ export default function About({ messages = {} }) {
                             />
                           </div>
                         )}
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>
@@ -259,11 +273,15 @@ export default function About({ messages = {} }) {
             </motion.div>
 
             {/* Right: Stat cards */}
-            <motion.div variants={item} className="lg:col-span-5">
+            <motion.div className="lg:col-span-5">
               <div className="flex flex-col gap-6">
                 {stats.map((stat, idx) => (
                   <motion.div
                     key={idx}
+                    variants={itemVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
                     whileHover={{ y: -2 }}
                     className="transform-gpu rounded-2xl border border-white/10 bg-slate-800/40 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-sm"
                   >
