@@ -179,7 +179,7 @@ export const messages = {
         internship: {
           title: "Frontend Web Developer",
           company: "MMS IT",
-          location: "Odawara, Kanagawa, Japan · Remote",
+          location: "Remote",
           period: "Jul 2025 - Present · 3 mos",
           description:
             "Participated in web development projects as a frontend developer intern, contributing to the creation of the Inventura App and supporting current company projects with modern web technologies.",
@@ -197,7 +197,7 @@ export const messages = {
         coordinator: {
           title: "Coordinator",
           company: "Career Tech Japan",
-          location: "Japan",
+          location: "Myanmar",
           period: "Dec 2023 - Jun 2024",
           description:
             "Matched Japanese companies with Myanmar candidates; prepared/translated documents, coordinated interviews, and supported visa application paperwork.",
@@ -435,7 +435,7 @@ export const messages = {
         internship: {
           title: "フロントエンドWeb開発者",
           company: "MMS IT",
-          location: "神奈川県小田原市・リモート",
+          location: "リモート",
           period: "2025年7月 - 現在 · 3ヶ月",
           description:
             "フロントエンド開発者インターンとしてWebプロジェクトに参加し、Inventura Appの作成と会社の現在進行中のプロジェクトを最新のWeb技術でサポートしました。",
@@ -453,7 +453,7 @@ export const messages = {
         coordinator: {
           title: "コーディネーター",
           company: "Career Tech Japan（送り出し機関）",
-          location: "日本",
+          location: "ミャンマー",
           period: "2023年12月 - 2024年6月",
           description:
             "日本企業とミャンマー人候補者のマッチング、書類準備・翻訳、面接調整、各種ビザ申請書類の準備支援を担当。",
