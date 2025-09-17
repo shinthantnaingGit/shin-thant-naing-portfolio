@@ -11,7 +11,7 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 
 function App() {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState("ja");
 
   const t = messages[language];
 

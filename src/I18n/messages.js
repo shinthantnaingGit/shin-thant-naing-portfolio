@@ -164,7 +164,7 @@ export const messages = {
           title: "Research Engineer",
           company:
             "Dispatch: Enchant Inc. → Assignment: Kajima Corporation Technical Research Institute (GI Fund CN Concrete Project)",
-          location: "Tokyo, Japan",
+          location: "Kanagawa, Odawara, Japan",
           period: "Sep 2024 - Present",
           description:
             "Research support and operations at Kajima Technical Research Institute: quotation handling, procurement coordination, standardization and safety, data整理/visualization, and stakeholder communication.",
@@ -179,7 +179,7 @@ export const messages = {
           ],
         },
         internship: {
-          title: "Frontend Web Developer",
+          title: "Frontend Web Developer (Intern)",
           company: "MMS IT",
           location: "Myanmar・Remote",
           period: "Jul 2025 - Present · 3 mos",
@@ -422,7 +422,7 @@ export const messages = {
           title: "研究員",
           company:
             "派遣元：エンチャント株式会社 ／ 派遣先：鹿島建設株式会社 技術研究所（GI基金CNコンクリートPJ）",
-          location: "東京都, 日本",
+          location: "神奈川県、小田原市、日本",
           period: "2024年9月 - 現在",
           description:
             "見積対応、設備の調達管理、標準化・安全の整備、研究支援（センサー設置補助・データ整理/グラフ化）、関係者調整などを担当。",
@@ -437,9 +437,9 @@ export const messages = {
           ],
         },
         internship: {
-          title: "フロントエンドWeb開発者",
+          title: "フロントエンドWeb開発者（インターン）",
           company: "MMS IT",
-          location: "ミャンマー・リモート",
+          location: "ミャンマー、 リモート",
           period: "2025年7月 - 現在 · 3ヶ月",
           description:
             "フロントエンド開発者インターンとしてWebプロジェクトに参加し、Inventura Appの作成と会社の現在進行中のプロジェクトを最新のWeb技術でサポートしました。",
