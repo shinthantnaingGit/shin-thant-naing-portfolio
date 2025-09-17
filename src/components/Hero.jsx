@@ -133,7 +133,7 @@ export default function Hero({ messages }) {
             <motion.div variants={itemVariants} className="mb-6 overflow-hidden">
               <span
                 ref={typedRef}
-                className="overflow-hidden text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+                className="overflow-hidden whitespace-nowrap text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
               >
                 {messages.hero.title}
               </span>
