@@ -10,11 +10,11 @@ export const messages = {
     },
     hero: {
       name: "Shin Thant Naing",
-      title: "Mechatronics Engineer",
-      subtitle: "Transitioning to Frontend Web Development",
+      title: "Frontend Web Developer & Engineer",
+      subtitle: "Precision Engineering Meets Modern Web Development",
       description:
-        "From Myanmar to Japan, building bridges between engineering precision and digital innovation",
-      cta: "View Projects",
+        "Building responsive, user-focused applications while leveraging engineering principles for optimal performance",
+      cta: "See My Work",
       contact: "Get in Touch",
     },
     about: {
@@ -269,13 +269,13 @@ export const messages = {
       contact: "連絡先",
     },
     hero: {
-      name: "シン タント ナイン",
-      title: "メカトロニクスエンジニア",
-      subtitle: "フロントエンド開発への転身",
+      name: "Shin Thant Naing",
+      title: "フロントエンドウェブ開発者・技術者",
+      subtitle: "精密工学技術と最新ウェブ開発技術の統合",
       description:
-        "ミャンマーから日本へ。エンジニアの精密さとデジタル革新をつなぐフロントエンドへ。",
-      cta: "プロジェクトを見る",
-      contact: "お問い合わせ",
+        "工学的思考とウェブ開発スキルを組み合わせ、高性能でユーザビリティの高いアプリケーション開発を行っています",
+      cta: "実績を確認",
+      contact: "ご相談・お問い合わせ",
     },
     about: {
       highlightsTitle: "ハイライト",
