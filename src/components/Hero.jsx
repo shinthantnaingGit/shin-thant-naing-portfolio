@@ -115,12 +115,14 @@ export default function Hero({ messages }) {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 mx-auto"
+        className="relative z-10 max-w-7xl mx-auto"
       >
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-center">
-          
           {/* Left Side - Content */}
-          <motion.div variants={itemVariants} className="lg:order-1 lg:col-span-2 text-center lg:text-left">
+          <motion.div
+            variants={itemVariants}
+            className="lg:order-1 lg:col-span-2  text-center lg:text-left"
+          >
             {/* Name */}
             <motion.h1
               variants={itemVariants}
@@ -130,14 +132,22 @@ export default function Hero({ messages }) {
             </motion.h1>
 
             {/* Typing Animation */}
-            <motion.div variants={itemVariants} className="mb-6">
-              <span
-                ref={typedRef}
-                className="text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
-              >
-                {messages.hero.title}
-              </span>
-              <span className="animate-pulse text-purple-400 text-2xl">|</span>
+            <motion.div
+              variants={itemVariants}
+              className="mb-6 h-16 flex items-center justify-center lg:justify-start"
+            >
+              <div className="min-w-0 w-full">
+                <span
+                  ref={typedRef}
+                  className="text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent whitespace-nowrap overflow-hidden"
+                  style={{ minHeight: "1.5em", display: "inline-block" }}
+                >
+                  {messages.hero.title}
+                </span>
+                <span className="animate-pulse text-purple-400 text-2xl ml-1">
+                  |
+                </span>
+              </div>
             </motion.div>
 
             {/* Description */}
@@ -175,8 +185,8 @@ export default function Hero({ messages }) {
           </motion.div>
 
           {/* Right Side - Profile Image */}
-          <motion.div 
-            variants={imageVariants} 
+          <motion.div
+            variants={imageVariants}
             className="lg:order-2 flex justify-center lg:justify-end"
           >
             <div className="relative">
@@ -186,10 +196,11 @@ export default function Hero({ messages }) {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0 rounded-full"
                 style={{
-                  background: "conic-gradient(from 0deg, #8b5cf6, #06b6d4, #8b5cf6, #06b6d4, #8b5cf6)",
+                  background:
+                    "conic-gradient(from 0deg, #8b5cf6, #06b6d4, #8b5cf6, #06b6d4, #8b5cf6)",
                   padding: "4px",
                   width: "320px",
-                  height: "320px"
+                  height: "320px",
                 }}
               >
                 <div className="w-full h-full bg-slate-900 rounded-full" />
@@ -219,12 +230,15 @@ export default function Hero({ messages }) {
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     // Fallback if image doesn't load
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
+                    e.target.style.display = "none";
+                    e.target.nextSibling.style.display = "flex";
                   }}
                 />
                 {/* Fallback content if image fails to load */}
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800 rounded-full flex items-center justify-center text-6xl font-bold text-purple-400" style={{ display: 'none' }}>
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800 rounded-full flex items-center justify-center text-6xl font-bold text-purple-400"
+                  style={{ display: "none" }}
+                >
                   STN
                 </div>
               </div>
@@ -268,7 +282,6 @@ export default function Hero({ messages }) {
               />
             </div>
           </motion.div>
-
         </div>
 
         {/* Scroll Indicator - Centered at bottom */}
