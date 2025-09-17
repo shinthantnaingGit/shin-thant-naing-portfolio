@@ -115,7 +115,7 @@ export default function Hero({ messages }) {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 max-w-7xl mx-auto"
+        className="relative z-10 mx-auto"
       >
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-center">
           
