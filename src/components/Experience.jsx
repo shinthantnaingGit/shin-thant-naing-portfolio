@@ -98,8 +98,9 @@ export default function Experience({ messages }) {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          // whileInView="visible"
+          animate="visible"
+          // viewport={{ once: true, amount: 0.1 }}
         >
           {/* Section Title */}
           <motion.div variants={itemVariants} className="text-center mb-16">
