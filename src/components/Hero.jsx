@@ -117,10 +117,10 @@ export default function Hero({ messages }) {
         animate="visible"
         className="relative overflow-hidden z-10 max-w-7xl mx-auto"
       >
-        <div className="grid lg:grid-cols-3 overflow-hidden  gap-12 lg:gap-16 items-center">
+        <div className="flex flex-col lg:flex-row overflow-hidden gap-12 lg:gap-16 items-center">
           
           {/* Left Side - Content */}
-          <motion.div variants={itemVariants} className="lg:order-1 lg:col-span-2 text-center lg:text-left">
+          <motion.div variants={itemVariants} className="lg:order-1 lg:flex-1 min-w-0 text-center lg:text-left">
             {/* Name */}
             <motion.h1
               variants={itemVariants}
@@ -130,10 +130,10 @@ export default function Hero({ messages }) {
             </motion.h1>
 
             {/* Typing Animation */}
-            <motion.div variants={itemVariants} className="mb-6 overflow-hidden">
+            <motion.div variants={itemVariants} className="mb-6 overflow-hidden max-w-full">
               <span
                 ref={typedRef}
-                className="overflow-hidden whitespace-nowrap text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+                className="block overflow-hidden max-w-full whitespace-nowrap text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
               >
                 {messages.hero.title}
               </span>
@@ -177,7 +177,7 @@ export default function Hero({ messages }) {
           {/* Right Side - Profile Image */}
           <motion.div 
             variants={imageVariants} 
-            className="lg:order-2 flex justify-center lg:justify-end"
+            className="lg:order-2 flex justify-center lg:justify-end flex-shrink-0"
           >
             <div className="relative">
               {/* Outer Rotating Ring */}
