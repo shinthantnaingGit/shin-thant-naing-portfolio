@@ -6,48 +6,48 @@ import { ArrowDown, Download, Mail } from "lucide-react";
 export default function Hero({ messages }) {
   const typedRef = useRef(null);
 
-  // useEffect(() => {
-  //   // Simple typing effect implementation
-  //   let typed;
-  //   const element = typedRef.current;
-  //   if (element) {
-  //     const texts = [messages.hero.title, messages.hero.subtitle];
-  //     let textIndex = 0;
-  //     let charIndex = 0;
-  //     let isDeleting = false;
+  useEffect(() => {
+    // Simple typing effect implementation
+    let typed;
+    const element = typedRef.current;
+    if (element) {
+      const texts = [messages.hero.title, messages.hero.subtitle];
+      let textIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
 
-  //     const type = () => {
-  //       const currentText = texts[textIndex];
+      const type = () => {
+        const currentText = texts[textIndex];
 
-  //       if (isDeleting) {
-  //         element.textContent = currentText.substring(0, charIndex - 1);
-  //         charIndex--;
-  //       } else {
-  //         element.textContent = currentText.substring(0, charIndex + 1);
-  //         charIndex++;
-  //       }
+        if (isDeleting) {
+          element.textContent = currentText.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          element.textContent = currentText.substring(0, charIndex + 1);
+          charIndex++;
+        }
 
-  //       let typeSpeed = isDeleting ? 50 : 100;
+        let typeSpeed = isDeleting ? 50 : 100;
 
-  //       if (!isDeleting && charIndex === currentText.length) {
-  //         typeSpeed = 2000;
-  //         isDeleting = true;
-  //       } else if (isDeleting && charIndex === 0) {
-  //         isDeleting = false;
-  //         textIndex = (textIndex + 1) % texts.length;
-  //         typeSpeed = 500;
-  //       }
+        if (!isDeleting && charIndex === currentText.length) {
+          typeSpeed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          textIndex = (textIndex + 1) % texts.length;
+          typeSpeed = 500;
+        }
 
-  //       typed = setTimeout(type, typeSpeed);
-  //     };
+        typed = setTimeout(type, typeSpeed);
+      };
 
-  //     type();
-  //   }
+      type();
+    }
 
-  //   return () => {
-  //     if (typed) clearTimeout(typed);
-  //   };
-  // }, [messages]);
+    return () => {
+      if (typed) clearTimeout(typed);
+    };
+  }, [messages]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -81,7 +81,7 @@ export default function Hero({ messages }) {
   return (
     <section
       id="home"
-      className="relative overflow-hidden min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 relative scroll-mt-24 sm:scroll-mt-28"
+      className="relative min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24 sm:scroll-mt-28"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -117,10 +117,10 @@ export default function Hero({ messages }) {
         animate="visible"
         className="relative z-10 max-w-7xl mx-auto"
       >
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-center">
           
           {/* Left Side - Content */}
-          <motion.div variants={itemVariants} className="lg:order-1 lg:flex-1 min-w-0 text-center lg:text-left">
+          <motion.div variants={itemVariants} className="lg:order-1 lg:col-span-2 text-center lg:text-left">
             {/* Name */}
             <motion.h1
               variants={itemVariants}
@@ -130,12 +130,14 @@ export default function Hero({ messages }) {
             </motion.h1>
 
             {/* Typing Animation */}
-            <motion.div variants={itemVariants} className="mb-6 max-w-full">
+            <motion.div variants={itemVariants} className="mb-6">
               <span
-                className="block max-w-full whitespace-nowrap text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
+                ref={typedRef}
+                className="text-xl sm:text-2xl lg:text-3xl font-medium bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
               >
                 {messages.hero.title}
               </span>
+              <span className="animate-pulse text-purple-400 text-2xl">|</span>
             </motion.div>
 
             {/* Description */}
@@ -175,7 +177,7 @@ export default function Hero({ messages }) {
           {/* Right Side - Profile Image */}
           <motion.div 
             variants={imageVariants} 
-            className="lg:order-2 flex justify-center lg:justify-end flex-shrink-0"
+            className="lg:order-2 flex justify-center lg:justify-end"
           >
             <div className="relative">
               {/* Outer Rotating Ring */}
