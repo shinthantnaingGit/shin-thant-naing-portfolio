@@ -137,7 +137,6 @@ export default function Hero({ messages }) {
               >
                 {messages.hero.title}
               </span>
-              <span className="animate-pulse text-purple-400 overflow-hidden text-2xl">|</span>
             </motion.div>
 
             {/* Description */}
