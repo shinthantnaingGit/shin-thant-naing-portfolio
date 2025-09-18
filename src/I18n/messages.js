@@ -75,7 +75,7 @@ export const messages = {
     },
     projects: {
       title: "Featured Projects",
-      viewDemo: "View Demo",
+      viewDemo: "View Project",
       sourceCode: "Source Code",
       details: "Details",
       items: [
@@ -95,8 +95,7 @@ export const messages = {
             "Zustand",
           ],
           category: "Full-Stack",
-          image:
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+          image: "/resume/projects/inventura.png",
           url: "https://inventura-inventory-management-syst.vercel.app/",
           featured: true,
         },
@@ -107,8 +106,7 @@ export const messages = {
             "Clinic portfolio with service pages, bilingual-ready layout, and subtle animations.",
           tech: ["React", "Tailwind CSS", "Framer Motion"],
           category: "Portfolio",
-          image:
-            "https://images.unsplash.com/photo-1505575972945-334ecb2293f2?w=600&h=400&fit=crop",
+          image: "/resume/projects/swanthukha.png",
           url: "https://swanthukha.phoenixgroupint.com/",
         },
         {
@@ -118,8 +116,7 @@ export const messages = {
             "Business portfolio with custom branding and smooth interactions.",
           tech: ["React", "Tailwind CSS", "Framer Motion"],
           category: "Portfolio",
-          image:
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+          image: "/resume/projects/lapyaewoon.png",
           url: "https://lapyaewoon.phoenixgroupint.com/",
         },
         {
@@ -129,8 +126,7 @@ export const messages = {
             "Create printable invoices, manage items, and see live totals with tax.",
           tech: ["HTML", "Tailwind CSS", "JavaScript"],
           category: "Frontend",
-          image:
-            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+          image: "/resume/projects/invoice.png",
           url: "https://invoice-app-theta-six.vercel.app/",
         },
         {
@@ -140,8 +136,7 @@ export const messages = {
             "Clean todo app with counters and quick actions to mark/clear tasks.",
           tech: ["HTML", "Tailwind CSS", "JavaScript"],
           category: "Frontend",
-          image:
-            "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+          image: "/resume/projects/todo.png",
           url: "https://to-do-list-app-deployment.vercel.app/",
         },
       ],
@@ -329,7 +324,7 @@ export const messages = {
     },
     projects: {
       title: "主要プロジェクト",
-      viewDemo: "デモを見る",
+      viewDemo: "プロジェクトを見る",
       sourceCode: "ソースコード",
       details: "詳細",
       items: [
@@ -349,8 +344,7 @@ export const messages = {
             "Zustand",
           ],
           category: "フルスタック",
-          image:
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+          image: "/resume/projects/inventura.png",
           url: "https://inventura-inventory-management-syst.vercel.app/",
           featured: true,
         },
@@ -361,8 +355,7 @@ export const messages = {
             "サービス紹介ページ付きのクリニック用ポートフォリオ。バイリンガル対応の軽量UI。",
           tech: ["React", "Tailwind CSS", "Framer Motion"],
           category: "ポートフォリオ",
-          image:
-            "https://images.unsplash.com/photo-1505575972945-334ecb2293f2?w=600&h=400&fit=crop",
+          image: "/resume/projects/swanthukha.png",
           url: "https://swanthukha.phoenixgroupint.com/",
         },
         {
@@ -372,8 +365,7 @@ export const messages = {
             "ロゴ/ブランディングを含む事業用ポートフォリオ。滑らかなアニメーション。",
           tech: ["React", "Tailwind CSS", "Framer Motion"],
           category: "ポートフォリオ",
-          image:
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+          image: "/resume/projects/lapyaewoon.png",
           url: "https://lapyaewoon.phoenixgroupint.com/",
         },
         {
@@ -383,8 +375,7 @@ export const messages = {
             "印刷用請求書を作成。商品管理と合計/税の自動計算に対応。",
           tech: ["HTML", "Tailwind CSS", "JavaScript"],
           category: "フロントエンド",
-          image:
-            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+          image: "/resume/projects/invoice.png",
           url: "https://invoice-app-theta-six.vercel.app/",
         },
         {
@@ -394,8 +385,7 @@ export const messages = {
             "タスクのカウントや一括操作に対応したシンプルなToDoアプリ。",
           tech: ["HTML", "Tailwind CSS", "JavaScript"],
           category: "フロントエンド",
-          image:
-            "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+          image: "/resume/projects/todo.png",
           url: "https://to-do-list-app-deployment.vercel.app/",
         },
       ],

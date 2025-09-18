@@ -51,7 +51,8 @@ export default function Projects({ messages }) {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="mb-16"
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="mb-16 group"
             >
               <div className="relative overflow-hidden bg-slate-800/30 backdrop-blur-sm border border-purple-500/20 rounded-2xl">
                 <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-0">
@@ -64,7 +65,7 @@ export default function Projects({ messages }) {
                       alt={project.title}
                       className="w-full h-56 sm:h-64 lg:h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent group-hover:from-slate-900/60 transition-all duration-300" />
                     <div className="absolute top-4 right-4">
                       <Badge className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
                         Featured
@@ -78,7 +79,7 @@ export default function Projects({ messages }) {
                     >
                       {project.category}
                     </Badge>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-gray-300 text-lg mb-6 leading-relaxed">
