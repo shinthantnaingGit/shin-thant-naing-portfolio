@@ -12,6 +12,7 @@ import { AnimatePresence } from "framer-motion";
 
 export default function Experience({ messages }) {
   const [activeTab, setActiveTab] = useState("jobs");
+  const [tabKey, setTabKey] = useState(0);
   const experiences = [
     {
       title: messages.experience.experiences.researcher.title,
@@ -120,7 +121,10 @@ export default function Experience({ messages }) {
               <button
                 type="button"
                 aria-pressed={activeTab === "jobs"}
-                onClick={() => setActiveTab("jobs")}
+                onClick={() => {
+                  setActiveTab("jobs");
+                  setTabKey((prev) => prev + 1);
+                }}
                 className={`flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full text-sm sm:text-base font-medium transition focus:outline-none focus:ring-2 focus:ring-blue-500/50 ${
                   activeTab === "jobs"
                     ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow"
@@ -133,7 +137,10 @@ export default function Experience({ messages }) {
               <button
                 type="button"
                 aria-pressed={activeTab === "education"}
-                onClick={() => setActiveTab("education")}
+                onClick={() => {
+                  setActiveTab("education");
+                  setTabKey((prev) => prev + 1);
+                }}
                 className={`flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full text-sm sm:text-base font-medium transition focus:outline-none focus:ring-2 focus:ring-blue-500/50 ${
                   activeTab === "education"
                     ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow"
@@ -147,7 +154,7 @@ export default function Experience({ messages }) {
           </motion.div>
 
           {/* Jobs Timeline */}
-        <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" key={tabKey}>
             {activeTab === "jobs" && (
               <motion.div
                 key="jobs"

@@ -118,9 +118,11 @@ export default function Hero({ messages }) {
         className="relative z-10 max-w-7xl mx-auto"
       >
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-center">
-          
           {/* Left Side - Content */}
-          <motion.div variants={itemVariants} className="lg:order-1 lg:col-span-2 text-center lg:text-left">
+          <motion.div
+            variants={itemVariants}
+            className="lg:order-1 lg:col-span-2 text-center lg:text-left"
+          >
             {/* Name */}
             <motion.h1
               variants={itemVariants}
@@ -163,9 +165,8 @@ export default function Hero({ messages }) {
               </a>
               <a href="#contact">
                 <Button
-                  variant="outline"
                   size="lg"
-                  className="border-purple-500/50 text-purple-300 hover:bg-purple-900/30 px-8 py-3 text-lg font-semibold"
+                  className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border-0"
                 >
                   <Mail className="w-5 h-5 mr-2" />
                   {messages.hero.contact}
@@ -175,42 +176,29 @@ export default function Hero({ messages }) {
           </motion.div>
 
           {/* Right Side - Profile Image */}
-          <motion.div 
-            variants={imageVariants} 
+          <motion.div
+            variants={imageVariants}
             className="lg:order-2 flex justify-center lg:justify-end"
           >
-            <div className="relative">
-              {/* Outer Rotating Ring */}
+            <div className="relative flex items-center justify-center">
+              {/* Single Rotating Ring */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full"
+                className="absolute rounded-full"
                 style={{
-                  background: "conic-gradient(from 0deg, #8b5cf6, #06b6d4, #8b5cf6, #06b6d4, #8b5cf6)",
-                  padding: "4px",
-                  width: "320px",
-                  height: "320px"
+                  background:
+                    "conic-gradient(from 0deg, #059669, #0d9488, #059669, #0d9488, #059669)",
+                  padding: "6px",
+                  width: "340px",
+                  height: "340px",
                 }}
               >
                 <div className="w-full h-full bg-slate-900 rounded-full" />
               </motion.div>
 
-              {/* Middle Ring */}
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-2 rounded-full bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-purple-500/20 p-1"
-              >
-                <div className="w-full h-full bg-slate-900/50 rounded-full" />
-              </motion.div>
-
-              {/* Inner Glow Ring */}
-              <div className="absolute inset-4 rounded-full bg-gradient-to-r from-purple-600/30 via-blue-600/30 to-purple-600/30 p-2">
-                <div className="w-full h-full bg-slate-900 rounded-full" />
-              </div>
-
               {/* Profile Image */}
-              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl">
+              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl z-10">
                 <motion.img
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
@@ -219,12 +207,15 @@ export default function Hero({ messages }) {
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     // Fallback if image doesn't load
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
+                    e.target.style.display = "none";
+                    e.target.nextSibling.style.display = "flex";
                   }}
                 />
                 {/* Fallback content if image fails to load */}
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800 rounded-full flex items-center justify-center text-6xl font-bold text-purple-400" style={{ display: 'none' }}>
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800 rounded-full flex items-center justify-center text-6xl font-bold text-purple-400"
+                  style={{ display: "none" }}
+                >
                   STN
                 </div>
               </div>
@@ -268,7 +259,6 @@ export default function Hero({ messages }) {
               />
             </div>
           </motion.div>
-
         </div>
 
         {/* Scroll Indicator - Centered at bottom */}

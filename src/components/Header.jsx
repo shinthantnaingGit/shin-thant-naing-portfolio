@@ -33,7 +33,7 @@ export default function Header({ language, setLanguage, messages }) {
             whileHover={{ scale: 1.05 }}
             className="text-xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
           >
-            STN
+            {messages.logo}
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -60,7 +60,7 @@ export default function Header({ language, setLanguage, messages }) {
               className="bg-slate-800/50 border-purple-500/30 text-purple-300 hover:bg-purple-900/30"
             >
               <Globe className="w-4 h-4 mr-2" />
-              {language === "en" ? "🇯🇵 JP" : "🇬🇧 EN"}
+              {language === "en" ? "JP" : "EN"}
             </Button>
 
             {/* Mobile Menu Button */}
@@ -80,30 +80,29 @@ export default function Header({ language, setLanguage, messages }) {
         </div>
 
         {/* Mobile Navigation */}
-      
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-purple-500/20 py-4"
-            >
-              {navItems.map((item, index) => (
-                <motion.a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block w-full text-left px-3 py-3 text-sm font-medium transition-colors text-gray-300 hover:text-white hover:bg-slate-800/50"
-                >
-                  {item.label}
-                </motion.a>
-              ))}
-            </motion.div>
-          )}
-      
+
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden border-t border-purple-500/20 py-4"
+          >
+            {navItems.map((item, index) => (
+              <motion.a
+                key={item.id}
+                href={`#${item.id}`}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full text-left px-3 py-3 text-sm font-medium transition-colors text-gray-300 hover:text-white hover:bg-slate-800/50"
+              >
+                {item.label}
+              </motion.a>
+            ))}
+          </motion.div>
+        )}
       </nav>
     </motion.header>
   );

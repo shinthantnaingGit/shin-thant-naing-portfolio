@@ -1,5 +1,6 @@
 export const messages = {
   en: {
+    logo: "Portfolio",
     nav: {
       home: "Home",
       about: "About",
@@ -26,6 +27,11 @@ export const messages = {
             k: "Researcher at Kajima Corporation (Technical Research Institute)",
             v: "CO₂ reduction research, equipment procurement management, work standards & safety implementation, data analysis/reporting.",
           },
+          {
+            dot: "bg-green-400",
+            k: "Frontend Web Developer Intern at MMS IT",
+            v: "Developing Inventura App with React.js, implementing responsive designs, API integration, and contributing to company projects with modern web technologies.",
+          },
         ],
         projects: [
           {
@@ -33,30 +39,18 @@ export const messages = {
             k: "Inventory & Invoice Management System (Inventura)",
             v: "Next.js + Tailwind + Zustand + SWR + PrimeReact + Chart.js. Features inventory CRUD, voucher creation, profile management, bilingual UI (EN/JA).",
           },
-          {
-            dot: "bg-cyan-400",
-            k: "Swan Thu Kha - Traditional Myanmar Medicine",
-            v: "Portfolio website with service pages, modern UI, and smooth animations (React + Tailwind + Framer Motion).",
-          },
-          {
-            dot: "bg-indigo-400",
-            k: "La Pyae Woon Iron & Steel Trading",
-            v: "Business portfolio website with custom logo, branding, and lightweight frontend implementation.",
-          },
         ],
       },
-      languagesTitle: "Languages / 言語",
+      languagesTitle: "Languages",
       languages: [
         { name: "Japanese", level: "JLPT N2", percent: 95 },
         { name: "English", level: "Business", percent: 90 },
-        { name: "Burmese", level: "Native", percent: 100 },
       ],
       title: "About Me",
       content:
-        "Myanmar-born engineer based in Kanagawa, Japan. I’m transitioning into a Frontend Web Developer while working as a researcher at Kajima Corporation Technical Research Institute (CO₂ reduction & data analysis). I build clean, fast, bilingual UIs with Next.js/React and Tailwind.",
+        "Myanmar-born engineer based in Kanagawa, Japan. I'm transitioning into a Frontend Web Developer while working as a researcher at Kajima Corporation Technical Research Institute and as a Frontend Intern at MMS IT. I build clean, fast, bilingual UIs with Next.js/React and Tailwind.",
       journey: "Highlights",
-      current:
-        "Researcher at Kajima Corporation (Technical Research Institute)",
+      current: "Researcher @ Kajima + Frontend Intern @ MMS IT",
       focus:
         "Frontend-first: Next.js, React, Tailwind, Zustand, SWR, PrimeReact, Chart.js, Framer Motion; bilingual EN/JA (JLPT N2).",
       // New: stat labels/values used by the About section cards
@@ -66,7 +60,7 @@ export const messages = {
         currentLabel: "Current",
         current: "Researcher @ Kajima Technical Research Institute",
         seekingLabel: "Seeking",
-        seeking: "Frontend Web Developer roles (Japan-wide & Remote)",
+        seeking: "Frontend Web Developer roles in Japan",
         languagesLabel: "Languages",
         languages: "English / Japanese",
       },
@@ -182,7 +176,7 @@ export const messages = {
         internship: {
           title: "Frontend Web Developer (Intern)",
           company: "MMS IT",
-          location: "Myanmar・Remote",
+          location: "Myanmar",
           period: "Jul 2025 - Present · 3 mos",
           description:
             "Participated in web development projects as a frontend developer intern, contributing to the creation of the Inventura App and supporting current company projects with modern web technologies.",
@@ -254,12 +248,13 @@ export const messages = {
       },
       info: {
         location: "Kanagawa, Japan",
-        available: "Open across Japan & Remote",
+        available: "Open to opportunities in Japan",
         response: "Quick response time",
       },
     },
   },
   ja: {
+    logo: "ポートフォリオ",
     nav: {
       home: "ホーム",
       about: "私について",
@@ -269,7 +264,7 @@ export const messages = {
       contact: "連絡先",
     },
     hero: {
-      name: "Shin Thant Naing",
+      name: "シン・タンッ・ナイン",
       title: "フロントエンドウェブ開発者",
       subtitle: "精密工学技術と最新ウェブ開発技術の統合",
       description:
@@ -286,6 +281,11 @@ export const messages = {
             k: "鹿島建設 技術研究所 研究員",
             v: "CO₂削減研究、設備調達管理、作業標準・安全対策の実施、データ分析・報告業務。",
           },
+          {
+            dot: "bg-green-400",
+            k: "MMS IT フロントエンドWeb開発者（インターン）",
+            v: "React.jsを使用したInventura Appの開発、レスポンシブデザインの実装、API統合、最新のWeb技術で会社プロジェクトに貢献。",
+          },
         ],
         projects: [
           {
@@ -293,29 +293,18 @@ export const messages = {
             k: "在庫・請求管理システム (Inventura)",
             v: "Next.js + Tailwind + Zustand + SWR + PrimeReact + Chart.js。 在庫CRUD、バウチャー作成、プロフィール管理、日英対応UI。",
           },
-          {
-            dot: "bg-cyan-400",
-            k: "Swan Thu Kha - 伝統医療（ミャンマー）",
-            v: "サービス紹介ページを備えたポートフォリオサイト。モダンなUIとアニメーション（React + Tailwind + Framer Motion）。",
-          },
-          {
-            dot: "bg-indigo-400",
-            k: "La Pyae Woon Iron & Steel Trading",
-            v: "事業用ポートフォリオサイト。ロゴ/ブランディング、軽量なフロント実装。",
-          },
         ],
       },
       languagesTitle: "言語",
       languages: [
         { name: "日本語", level: "JLPT N2", percent: 95 },
         { name: "英語", level: "ビジネス", percent: 90 },
-        { name: "ミャンマー語（ビルマ語）", level: "母語", percent: 100 },
       ],
       title: "自己紹介",
       content:
-        "神奈川県在住のミャンマー出身エンジニア。現在は鹿島建設 技術研究所で研究員（CO₂削減・データ分析）として勤務しつつ、Next.js/ReactとTailwindでクリーンで高速、日英対応のUIを構築するフロントエンドエンジニアを目指しています。",
+        "神奈川県在住のミャンマー出身エンジニア。現在は鹿島建設 技術研究所で研究員（CO₂削減・データ分析）として勤務し、MMS ITでフロントエンドインターンとして活動しながら、Next.js/ReactとTailwindでクリーンで高速、日英対応のUIを構築するフロントエンドエンジニアを目指しています。",
       journey: "ハイライト",
-      current: "鹿島建設 技術研究所 研究員",
+      current: "鹿島建設 研究員 + MMS IT フロントエンドインターン",
       focus:
         "フロントエンド中心：Next.js / React / Tailwind / Zustand / SWR / PrimeReact / Chart.js / Framer Motion。英日バイリンガル（JLPT N2）。",
       // New: stat labels/values for cards
@@ -325,7 +314,7 @@ export const messages = {
         currentLabel: "現職",
         current: "鹿島建設 技術研究所 研究員",
         seekingLabel: "志望職種",
-        seeking: "フロントエンドエンジニア（日本全国・リモート可）",
+        seeking: "フロントエンドエンジニア（日本国内）",
         languagesLabel: "言語",
         languages: "英語 / 日本語",
       },
@@ -441,7 +430,7 @@ export const messages = {
         internship: {
           title: "フロントエンドWeb開発者（インターン）",
           company: "MMS IT",
-          location: "ミャンマー、 リモート",
+          location: "ミャンマー",
           period: "2025年7月 - 現在 · 3ヶ月",
           description:
             "フロントエンド開発者インターンとしてWebプロジェクトに参加し、Inventura Appの作成と会社の現在進行中のプロジェクトを最新のWeb技術でサポートしました。",
@@ -513,8 +502,72 @@ export const messages = {
       },
       info: {
         location: "神奈川県, 日本",
-        available: "日本全国・リモート可",
+        available: "日本国内の機会にオープン",
         response: "迅速な対応",
+      },
+      // New comprehensive contact content
+      header: {
+        badge: "お問い合わせ",
+        title: "お問い合わせ",
+        subtitle: "お気軽にご連絡ください",
+        description:
+          "次のプロジェクトでコラボレーションしませんか？新しい機会や革新的なアイデアについて議論し、一緒に素晴らしいものを作り上げることを常に楽しみにしています。",
+      },
+      methods: {
+        email: {
+          title: "メール",
+          value: "shinthantnaing.general@gmail.com",
+          description: "いつでもメールをお送りください",
+        },
+        phone: {
+          title: "電話",
+          value: "+81-70-9239-4148",
+          description: "直接お電話ください",
+        },
+        linkedin: {
+          title: "LinkedIn",
+          value: "Shin Thant Naing",
+          description: "プロフェッショナルに繋がりましょう",
+        },
+        github: {
+          title: "GitHub",
+          value: "@shinthantnaingGit",
+          description: "コードとプロジェクトをご覧ください",
+        },
+      },
+      quickInfo: {
+        title: "基本情報",
+        location: {
+          label: "所在地",
+          value: "神奈川県, 日本",
+        },
+        available: {
+          label: "対応可能",
+          value: "フルタイムの機会",
+        },
+        response: {
+          label: "返信",
+          value: "24時間以内",
+        },
+        languages: {
+          label: "言語",
+          value: "英語、日本語、ミャンマー語",
+        },
+        projects: {
+          label: "ポートフォリオプロジェクト",
+          value: "5件以上の完成プロジェクト",
+        },
+      },
+      cta: {
+        title: "一緒に素晴らしいものを作りましょう",
+        description:
+          "プロジェクトのアイデアがある、機会について話し合いたい、または単に挨拶したい場合でも、お気軽にお声がけください。一緒に特別なものを作りましょう！",
+        button: "お問い合わせ",
+      },
+      buttons: {
+        downloadResume: "履歴書をダウンロード",
+        downloadCareerHistory: "職務経歴書をダウンロード",
+        seeProjects: "プロジェクトを見る",
       },
     },
   },

@@ -96,10 +96,15 @@ export default function Projects({ messages }) {
                       ))}
                     </div>
                     <div className="flex flex-wrap gap-4">
-                      <a href={project.url} target="_blank" rel="noreferrer">
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-full"
+                      >
                         <Button
                           size="lg"
-                          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 w-full"
                         >
                           <Eye className="w-4 h-4 mr-2" />
                           {messages.projects.viewDemo}
