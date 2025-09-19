@@ -178,7 +178,8 @@ export default function Projects({ messages }) {
                 whileHover={{ y: -5 }}
                 className="group cursor-pointer"
               >
-                <div className="relative overflow-hidden rounded-xl shadow-lg aspect-[4/3]">
+                {/* Desktop Image-First Design */}
+                <div className="hidden lg:block relative overflow-hidden rounded-xl shadow-lg aspect-[4/3]">
                   {/* Project Image */}
                   <motion.img
                     whileHover={{ scale: 1.1 }}
@@ -191,11 +192,11 @@ export default function Projects({ messages }) {
                   {/* Dark Overlay - Much darker on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent group-hover:from-black/95 group-hover:via-black/90 group-hover:to-black/85 transition-all duration-500" />
 
-                  {/* Category Badge */}
+                  {/* Category Badge - Better visibility */}
                   <div className="absolute top-4 left-4 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
                     <Badge
                       variant="secondary"
-                      className="bg-white/10 backdrop-blur-sm text-white border-white/20"
+                      className="bg-black/60 backdrop-blur-sm text-white border-white/40 shadow-lg"
                     >
                       {project.category}
                     </Badge>
@@ -207,7 +208,7 @@ export default function Projects({ messages }) {
                     initial="hidden"
                     whileInView="hidden"
                     whileHover="visible"
-                    className="hidden lg:flex absolute inset-0 flex-col justify-center items-center text-center p-6"
+                    className="absolute inset-0 flex flex-col justify-center items-center text-center p-6"
                   >
                     <div className="space-y-4 max-w-xs">
                       <Badge
@@ -228,7 +229,7 @@ export default function Projects({ messages }) {
                       </p>
                       
                       <div className="flex flex-wrap gap-1 justify-center">
-                        {project.tech.slice(0, 3).map((tech) => (
+                        {project.tech.map((tech) => (
                           <Badge
                             key={tech}
                             variant="secondary"
@@ -237,14 +238,6 @@ export default function Projects({ messages }) {
                             {tech}
                           </Badge>
                         ))}
-                        {project.tech.length > 3 && (
-                          <Badge
-                            variant="secondary"
-                            className="text-xs bg-white/15 backdrop-blur-sm text-white border-white/30"
-                          >
-                            +{project.tech.length - 3}
-                          </Badge>
-                        )}
                       </div>
                       
                       <a
@@ -263,27 +256,62 @@ export default function Projects({ messages }) {
                       </a>
                     </div>
                   </motion.div>
+                </div>
 
-                  {/* Mobile Always-Visible Info */}
-                  <div className="lg:hidden absolute inset-0 flex flex-col justify-end p-4">
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-bold text-white">
-                        {project.title}
-                      </h3>
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noreferrer"
+                {/* Mobile Card Design - Image Top, Info Bottom */}
+                <div className="lg:hidden bg-slate-800/30 backdrop-blur-sm border border-purple-500/20 rounded-2xl overflow-hidden">
+                  {/* Image Section */}
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover object-center"
+                    />
+                    {/* Subtle gradient for better text contrast if needed */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
+                    {/* Category badge with better visibility */}
+                    <div className="absolute top-4 right-4">
+                      <Badge
+                        variant="secondary"
+                        className="bg-black/70 backdrop-blur-sm text-purple-300 border-purple-400/30 shadow-lg"
                       >
-                        <Button
-                          size="sm"
-                          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
-                        >
-                          <Eye className="w-4 h-4 mr-2" />
-                          View
-                        </Button>
-                      </a>
+                        {project.category}
+                      </Badge>
                     </div>
+                  </div>
+                  
+                  {/* Info Section - Always at bottom */}
+                  <div className="p-6 space-y-4">
+                    <h3 className="text-xl font-bold text-white">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <Badge
+                          key={tech}
+                          variant="outline"
+                          className="border-purple-500/30 text-purple-300 hover:bg-purple-900/20"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Button
+                        size="lg"
+                        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white w-full"
+                      >
+                        <Eye className="w-5 h-5 mr-2" />
+                        {messages.projects.viewDemo}
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </motion.div>
