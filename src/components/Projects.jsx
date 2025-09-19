@@ -89,59 +89,51 @@ export default function Projects({ messages }) {
                   whileHover="visible"
                   className="absolute inset-0 flex flex-col justify-center items-center text-center p-6 sm:p-8 lg:p-12"
                 >
-                  <div className="space-y-4">
-                    <Badge
-                      variant="secondary"
-                      className="w-fit bg-white/10 backdrop-blur-sm text-purple-300 border-purple-400/30"
-                    >
-                      {project.category}
-                    </Badge>
-                    
-                    <h3 className="text-2xl lg:text-4xl font-bold text-white">
-                      {project.title}
-                    </h3>
-                    
-                    <p className="text-gray-200 text-lg lg:text-xl leading-relaxed max-w-2xl">
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2 pt-2">
-                      {project.tech.slice(0, 4).map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="outline"
-                          className="border-white/30 text-white bg-white/10 backdrop-blur-sm hover:bg-white/20"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                      {project.tech.length > 4 && (
-                        <Badge
-                          variant="outline"
-                          className="border-white/30 text-white bg-white/10 backdrop-blur-sm"
-                        >
-                          +{project.tech.length - 4} more
-                        </Badge>
-                      )}
-                    </div>
-                    
-                    <div className="pt-4">
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={(e) => e.stopPropagation()}
+                    <div className="space-y-4 max-w-md">
+                      <Badge
+                        variant="secondary"
+                        className="bg-gradient-to-r from-purple-600/80 to-blue-600/80 backdrop-blur-sm text-white border-none"
                       >
-                        <Button
-                          size="lg"
-                          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                        {project.category}
+                      </Badge>
+                      
+                      <h3 className="text-2xl lg:text-3xl font-bold text-white">
+                        {project.title}
+                      </h3>
+                      
+                      <p className="text-gray-100 text-base lg:text-lg leading-relaxed">
+                        {project.description}
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        {project.tech.map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="outline"
+                            className="border-white/40 text-white bg-white/10 backdrop-blur-sm"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                      
+                      <div className="pt-2">
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                         >
-                          <Eye className="w-5 h-5 mr-2" />
-                          {messages.projects.viewDemo}
-                        </Button>
-                      </a>
+                          <Button
+                            size="lg"
+                            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-xl hover:shadow-2xl transition-all duration-300 px-8"
+                          >
+                            <Eye className="w-5 h-5 mr-2" />
+                            {messages.projects.viewDemo}
+                          </Button>
+                        </a>
+                      </div>
                     </div>
-                  </div>
                 </motion.div>
 
                 {/* Mobile Touch Overlay */}
@@ -217,23 +209,30 @@ export default function Projects({ messages }) {
                     whileHover="visible"
                     className="hidden lg:flex absolute inset-0 flex-col justify-center items-center text-center p-6"
                   >
-                    <div className="space-y-3">
-                      <h3 className="text-xl font-bold text-white">
+                    <div className="space-y-4 max-w-xs">
+                      <Badge
+                        variant="secondary"
+                        className="bg-gradient-to-r from-purple-600/80 to-blue-600/80 backdrop-blur-sm text-white border-none"
+                      >
+                        {project.category}
+                      </Badge>
+                      
+                      <h3 className="text-xl lg:text-2xl font-bold text-white">
                         {project.title}
                       </h3>
                       
-                      <p className="text-gray-200 text-sm leading-relaxed">
-                        {project.description.length > 100 
-                          ? `${project.description.substring(0, 100)}...` 
+                      <p className="text-gray-100 text-sm lg:text-base leading-relaxed">
+                        {project.description.length > 120 
+                          ? `${project.description.substring(0, 120)}...` 
                           : project.description}
                       </p>
                       
-                      <div className="flex flex-wrap gap-1">
+                      <div className="flex flex-wrap gap-1 justify-center">
                         {project.tech.slice(0, 3).map((tech) => (
                           <Badge
                             key={tech}
                             variant="secondary"
-                            className="text-xs bg-white/10 backdrop-blur-sm text-gray-200 border-white/20"
+                            className="text-xs bg-white/15 backdrop-blur-sm text-white border-white/30"
                           >
                             {tech}
                           </Badge>
@@ -241,7 +240,7 @@ export default function Projects({ messages }) {
                         {project.tech.length > 3 && (
                           <Badge
                             variant="secondary"
-                            className="text-xs bg-white/10 backdrop-blur-sm text-gray-200 border-white/20"
+                            className="text-xs bg-white/15 backdrop-blur-sm text-white border-white/30"
                           >
                             +{project.tech.length - 3}
                           </Badge>
@@ -256,7 +255,7 @@ export default function Projects({ messages }) {
                       >
                         <Button
                           size="sm"
-                          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white w-full"
+                          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white w-full shadow-lg hover:shadow-xl transition-all duration-300"
                         >
                           <Eye className="w-4 h-4 mr-2" />
                           {messages.projects.viewDemo}
