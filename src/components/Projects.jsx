@@ -45,7 +45,7 @@ export default function Projects({ messages }) {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full" />
           <p className="text-lg sm:text-xl text-gray-300 mt-6 max-w-2xl mx-auto">
-            Showcasing my journey from engineering concepts to digital solutions
+           {messages.projects.description}
           </p>
         </motion.div>
 
@@ -78,7 +78,7 @@ export default function Projects({ messages }) {
                 {/* Featured Badge */}
                 <div className="absolute top-6 left-6">
                   <Badge className="bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm px-3 py-1">
-                    Featured
+                    {project.tag}
                   </Badge>
                 </div>
 

@@ -75,7 +75,8 @@ export const messages = {
     },
     projects: {
       title: "Featured Projects",
-      viewDemo: "View Project",
+      description:"Showcasing my journey from engineering concepts to digital solutions",
+      viewDemo: "Visit Website",
       sourceCode: "Source Code",
       details: "Details",
       items: [
@@ -98,6 +99,7 @@ export const messages = {
           image: "/resume/projects/inventura.png",
           url: "https://inventura-inventory-management-syst.vercel.app/",
           featured: true,
+          tag:" Featured"
         },
         {
           key: "swanthukha",
@@ -111,7 +113,7 @@ export const messages = {
         },
         {
           key: "lapyaewoon",
-          title: "La Pyae Woon Iron & Steel Trading",
+          title: "La Pyae Woon - Iron & Steel Trading",
           description:
             "Business portfolio with custom branding and smooth interactions.",
           tech: ["React", "Tailwind CSS", "Framer Motion"],
@@ -121,7 +123,7 @@ export const messages = {
         },
         {
           key: "invoice",
-          title: "Invoice Generation Tool (HTML/CSS/JS)",
+          title: "Invoice Generation Tool",
           description:
             "Create printable invoices, manage items, and see live totals with tax.",
           tech: ["HTML", "Tailwind CSS", "JavaScript"],
@@ -131,7 +133,7 @@ export const messages = {
         },
         {
           key: "todo",
-          title: "To Do List App (HTML/CSS/JS)",
+          title: "To Do List App",
           description:
             "Clean todo app with counters and quick actions to mark/clear tasks.",
           tech: ["HTML", "Tailwind CSS", "JavaScript"],
@@ -324,7 +326,8 @@ export const messages = {
     },
     projects: {
       title: "主要プロジェクト",
-      viewDemo: "プロジェクトを見る",
+      description:"エンジニアリングコンセプトからデジタルソリューションまでの歩みを紹介",
+      viewDemo: "ウェブサイトを見る",
       sourceCode: "ソースコード",
       details: "詳細",
       items: [
@@ -347,10 +350,11 @@ export const messages = {
           image: "/resume/projects/inventura.png",
           url: "https://inventura-inventory-management-syst.vercel.app/",
           featured: true,
+          tag:"フィーチャー プロジェクト"
         },
         {
           key: "swanthukha",
-          title: "Swan Thu Kha - 伝統医療（ミャンマー）",
+          title: "Swan Thu Kha - 伝統医療",
           description:
             "サービス紹介ページ付きのクリニック用ポートフォリオ。バイリンガル対応の軽量UI。",
           tech: ["React", "Tailwind CSS", "Framer Motion"],
@@ -360,7 +364,7 @@ export const messages = {
         },
         {
           key: "lapyaewoon",
-          title: "La Pyae Woon Iron & Steel Trading",
+          title: "La Pyae Woon - Iron & Steel Trading",
           description:
             "ロゴ/ブランディングを含む事業用ポートフォリオ。滑らかなアニメーション。",
           tech: ["React", "Tailwind CSS", "Framer Motion"],
@@ -370,7 +374,7 @@ export const messages = {
         },
         {
           key: "invoice",
-          title: "請求書作成ツール（HTML/CSS/JS）",
+          title: "請求書作成ツール",
           description:
             "印刷用請求書を作成。商品管理と合計/税の自動計算に対応。",
           tech: ["HTML", "Tailwind CSS", "JavaScript"],
@@ -380,7 +384,7 @@ export const messages = {
         },
         {
           key: "todo",
-          title: "To Do リスト（HTML/CSS/JS）",
+          title: "To Do リスト",
           description:
             "タスクのカウントや一括操作に対応したシンプルなToDoアプリ。",
           tech: ["HTML", "Tailwind CSS", "JavaScript"],

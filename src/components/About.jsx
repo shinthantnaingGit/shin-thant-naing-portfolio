@@ -56,7 +56,6 @@ export default function About({ messages = {} }) {
     "Next.js",
     "Zustand",
     "SWR",
-    "i18n (EN/JA)",
     "Git/GitHub",
   ];
 
