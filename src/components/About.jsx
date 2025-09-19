@@ -169,61 +169,7 @@ export default function About({ messages = {} }) {
                   </p>
                 </div>
 
-                {/* Highlights */}
-                {/* <div className="space-y-6 mb-8">
-                  <h3 className="flex items-center text-xl font-semibold text-purple-300">
-                    <Heart className="mr-2 h-5 w-5" />
-                    {t.highlightsTitle || "Highlights"}
-                  </h3> */}
-
-                  {/* Current Job */}
-                  {/* <div className="space-y-3 text-gray-300">
-                    {(t.highlights?.job || []).map((row, i) => (
-                      <motion.div
-                        key={`job-${i}`}
-                        variants={itemVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.5 }}
-                        className="flex items-start"
-                      >
-                        <div
-                          className={`mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full ${row.dot}`}
-                        />
-                        <p className="text-base">
-                          <span className="font-semibold text-white">
-                            {row.k}：
-                          </span>{" "}
-                          {row.v}
-                        </p>
-                      </motion.div>
-                    ))}
-                  </div> */}
-
-                  {/* Projects */}
-                  <div className="space-y-3 text-gray-300">
-                    {(t.highlights?.projects || []).map((row, i) => (
-                      <motion.div
-                        key={`proj-${i}`}
-                        variants={itemVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.5 }}
-                        className="flex items-start"
-                      >
-                        <div
-                          className={`mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full ${row.dot}`}
-                        />
-                        <p className="text-base">
-                          <span className="font-semibold text-white">
-                            {row.k}：
-                          </span>{" "}
-                          {row.v}
-                        </p>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
+              
 
                 {/* Skills & Languages Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
