@@ -7,15 +7,23 @@ import { ExternalLink, Eye } from "lucide-react";
 export default function Projects({ messages }) {
   const projects = messages.projects.items;
 
-  // Define variants for a single item.
-  // We'll apply this to each card.
+  // Animation variants
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: { duration: 0.6, ease: "easeOut" },
     },
+  };
+
+  const overlayVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.3, ease: "easeOut" }
+    }
   };
 
   return (
@@ -24,7 +32,7 @@ export default function Projects({ messages }) {
       className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-mt-24 sm:scroll-mt-28"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Section Title - We'll still animate this once */}
+        {/* Section Title */}
         <motion.div
           variants={itemVariants}
           initial="hidden"
@@ -41,77 +49,123 @@ export default function Projects({ messages }) {
           </p>
         </motion.div>
 
-        {/* Featured Project */}
+        {/* Featured Project - Full Width */}
         {projects
           .filter((p) => p.featured)
           .map((project, index) => (
             <motion.div
-              key={index}
+              key={`featured-${index}`}
               variants={itemVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="mb-16 group"
+              className="mb-16 group cursor-pointer"
             >
-              <div className="relative overflow-hidden bg-slate-800/30 backdrop-blur-sm border border-purple-500/20 rounded-2xl">
-                <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-0">
-                  {/* Image and Content here (no changes needed) */}
-                  <div className="relative overflow-hidden order-1 lg:order-1">
-                    <motion.img
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.3 }}
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-56 sm:h-64 lg:h-full object-cover object-top"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent group-hover:from-slate-900/60 transition-all duration-300" />
-                    <div className="absolute top-4 right-4">
-                      <Badge className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
-                        Featured
-                      </Badge>
-                    </div>
-                  </div>
-                  <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-2">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-video lg:aspect-[21/9]">
+                {/* Project Image */}
+                <motion.img
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover object-center"
+                />
+
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+
+                {/* Featured Badge */}
+                <div className="absolute top-6 left-6">
+                  <Badge className="bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm px-3 py-1">
+                    Featured
+                  </Badge>
+                </div>
+
+                {/* Project Info Overlay - Shows on Hover */}
+                <motion.div
+                  variants={overlayVariants}
+                  initial="hidden"
+                  whileInView="hidden"
+                  whileHover="visible"
+                  className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8 lg:p-12"
+                >
+                  <div className="space-y-4">
                     <Badge
                       variant="secondary"
-                      className="w-fit mb-4 bg-slate-700/50 text-purple-300"
+                      className="w-fit bg-white/10 backdrop-blur-sm text-purple-300 border-purple-400/30"
                     >
                       {project.category}
                     </Badge>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                    
+                    <h3 className="text-2xl lg:text-4xl font-bold text-white">
                       {project.title}
                     </h3>
-                    <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                    
+                    <p className="text-gray-200 text-lg lg:text-xl leading-relaxed max-w-2xl">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {project.tech.map((tech) => (
+                    
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {project.tech.slice(0, 4).map((tech) => (
                         <Badge
                           key={tech}
                           variant="outline"
-                          className="border-purple-500/30 text-purple-300 hover:bg-purple-900/20"
+                          className="border-white/30 text-white bg-white/10 backdrop-blur-sm hover:bg-white/20"
                         >
                           {tech}
                         </Badge>
                       ))}
+                      {project.tech.length > 4 && (
+                        <Badge
+                          variant="outline"
+                          className="border-white/30 text-white bg-white/10 backdrop-blur-sm"
+                        >
+                          +{project.tech.length - 4} more
+                        </Badge>
+                      )}
                     </div>
-                    <div className="flex flex-wrap gap-4">
+                    
+                    <div className="pt-4">
                       <a
                         href={project.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="w-full"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <Button
                           size="lg"
-                          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 w-full"
+                          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                         >
-                          <Eye className="w-4 h-4 mr-2" />
+                          <Eye className="w-5 h-5 mr-2" />
                           {messages.projects.viewDemo}
                         </Button>
                       </a>
                     </div>
+                  </div>
+                </motion.div>
+
+                {/* Mobile Touch Overlay */}
+                <div className="lg:hidden absolute inset-0 flex flex-col justify-end p-6">
+                  <div className="space-y-3">
+                    <h3 className="text-xl font-bold text-white">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-200 text-sm line-clamp-2">
+                      {project.description}
+                    </p>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Button
+                        size="sm"
+                        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
+                      >
+                        <Eye className="w-4 h-4 mr-2" />
+                        View
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -119,71 +173,118 @@ export default function Projects({ messages }) {
           ))}
 
         {/* Other Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects
             .filter((p) => !p.featured)
             .map((project, index) => (
               <motion.div
-                key={index}
+                key={`project-${index}`}
                 variants={itemVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="group bg-slate-800/30 backdrop-blur-sm border border-purple-500/20 rounded-2xl overflow-hidden"
+                whileHover={{ y: -5 }}
+                className="group cursor-pointer"
               >
-                {/* Image and Content here (no changes needed) */}
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden rounded-xl shadow-lg aspect-[4/3]">
+                  {/* Project Image */}
                   <motion.img
                     whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover object-top"
+                    className="w-full h-full object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute top-4 right-4">
+
+                  {/* Dark Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
                     <Badge
                       variant="secondary"
-                      className="bg-slate-800/80 text-gray-200"
+                      className="bg-white/10 backdrop-blur-sm text-white border-white/20"
                     >
                       {project.category}
                     </Badge>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-300 mb-4 text-base">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="secondary"
-                        className="text-xs bg-slate-700/50 text-gray-300"
+
+                  {/* Project Info Overlay - Shows on Hover/Touch */}
+                  <motion.div
+                    variants={overlayVariants}
+                    initial="hidden"
+                    whileInView="hidden"
+                    whileHover="visible"
+                    className="hidden lg:flex absolute inset-0 flex-col justify-end p-6"
+                  >
+                    <div className="space-y-3">
+                      <h3 className="text-xl font-bold text-white">
+                        {project.title}
+                      </h3>
+                      
+                      <p className="text-gray-200 text-sm leading-relaxed">
+                        {project.description.length > 100 
+                          ? `${project.description.substring(0, 100)}...` 
+                          : project.description}
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-1">
+                        {project.tech.slice(0, 3).map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="secondary"
+                            className="text-xs bg-white/10 backdrop-blur-sm text-gray-200 border-white/20"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                        {project.tech.length > 3 && (
+                          <Badge
+                            variant="secondary"
+                            className="text-xs bg-white/10 backdrop-blur-sm text-gray-200 border-white/20"
+                          >
+                            +{project.tech.length - 3}
+                          </Badge>
+                        )}
+                      </div>
+                      
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(e) => e.stopPropagation()}
                       >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <div className="flex gap-3">
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex-1"
-                    >
-                      <Button
-                        size="sm"
-                        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 w-full"
+                        <Button
+                          size="sm"
+                          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white w-full"
+                        >
+                          <Eye className="w-4 h-4 mr-2" />
+                          {messages.projects.viewDemo}
+                        </Button>
+                      </a>
+                    </div>
+                  </motion.div>
+
+                  {/* Mobile Always-Visible Info */}
+                  <div className="lg:hidden absolute inset-0 flex flex-col justify-end p-4">
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-bold text-white">
+                        {project.title}
+                      </h3>
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
                       >
-                        <Eye className="w-4 h-4 mr-2" />
-                        {messages.projects.viewDemo}
-                      </Button>
-                    </a>
+                        <Button
+                          size="sm"
+                          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
+                        >
+                          <Eye className="w-4 h-4 mr-2" />
+                          View
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </motion.div>
