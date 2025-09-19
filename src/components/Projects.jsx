@@ -71,8 +71,8 @@ export default function Projects({ messages }) {
                   className="w-full h-full object-cover object-center"
                 />
 
-                {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                {/* Dark Overlay - Much darker on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/95 group-hover:via-black/90 group-hover:to-black/80 transition-all duration-500" />
 
                 {/* Featured Badge */}
                 <div className="absolute top-6 left-6">
@@ -87,7 +87,7 @@ export default function Projects({ messages }) {
                   initial="hidden"
                   whileInView="hidden"
                   whileHover="visible"
-                  className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8 lg:p-12"
+                  className="absolute inset-0 flex flex-col justify-center items-center text-center p-6 sm:p-8 lg:p-12"
                 >
                   <div className="space-y-4">
                     <Badge
@@ -172,8 +172,8 @@ export default function Projects({ messages }) {
             </motion.div>
           ))}
 
-        {/* Other Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Other Projects Grid - 2x2 on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
           {projects
             .filter((p) => !p.featured)
             .map((project, index) => (
@@ -196,11 +196,11 @@ export default function Projects({ messages }) {
                     className="w-full h-full object-cover object-center"
                   />
 
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  {/* Dark Overlay - Much darker on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent group-hover:from-black/95 group-hover:via-black/90 group-hover:to-black/85 transition-all duration-500" />
 
                   {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-4 left-4 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
                     <Badge
                       variant="secondary"
                       className="bg-white/10 backdrop-blur-sm text-white border-white/20"
@@ -215,7 +215,7 @@ export default function Projects({ messages }) {
                     initial="hidden"
                     whileInView="hidden"
                     whileHover="visible"
-                    className="hidden lg:flex absolute inset-0 flex-col justify-end p-6"
+                    className="hidden lg:flex absolute inset-0 flex-col justify-center items-center text-center p-6"
                   >
                     <div className="space-y-3">
                       <h3 className="text-xl font-bold text-white">
