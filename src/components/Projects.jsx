@@ -63,7 +63,7 @@ export default function Projects({ messages }) {
                       transition={{ duration: 0.3 }}
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-56 sm:h-64 lg:h-full object-cover"
+                      className="w-full h-56 sm:h-64 lg:h-full object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent group-hover:from-slate-900/60 transition-all duration-300" />
                     <div className="absolute top-4 right-4">
@@ -139,7 +139,7 @@ export default function Projects({ messages }) {
                     transition={{ duration: 0.3 }}
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-48 object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute top-4 right-4">
