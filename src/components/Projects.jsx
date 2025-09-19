@@ -150,7 +150,7 @@ export default function Projects({ messages }) {
                   {/* Featured Badge */}
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg">
-                      Featured
+                        {project.tag}
                     </Badge>
                   </div>
                   {/* Category Badge */}

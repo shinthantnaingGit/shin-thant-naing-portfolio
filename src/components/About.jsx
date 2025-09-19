@@ -170,14 +170,14 @@ export default function About({ messages = {} }) {
                 </div>
 
                 {/* Highlights */}
-                <div className="space-y-6 mb-8">
+                {/* <div className="space-y-6 mb-8">
                   <h3 className="flex items-center text-xl font-semibold text-purple-300">
                     <Heart className="mr-2 h-5 w-5" />
                     {t.highlightsTitle || "Highlights"}
-                  </h3>
+                  </h3> */}
 
                   {/* Current Job */}
-                  <div className="space-y-3 text-gray-300">
+                  {/* <div className="space-y-3 text-gray-300">
                     {(t.highlights?.job || []).map((row, i) => (
                       <motion.div
                         key={`job-${i}`}
@@ -198,7 +198,7 @@ export default function About({ messages = {} }) {
                         </p>
                       </motion.div>
                     ))}
-                  </div>
+                  </div> */}
 
                   {/* Projects */}
                   <div className="space-y-3 text-gray-300">
