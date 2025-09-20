@@ -37,7 +37,7 @@ export const messages = {
           {
             dot: "bg-blue-400",
             k: "Inventory & Invoice Management System (Inventura)",
-            v: "Next.js + Tailwind + Zustand + SWR + PrimeReact + Chart.js. Features inventory CRUD, voucher creation, profile management, bilingual UI (EN/JA).",
+            v: "Next.js + Tailwind + Zustand + SWR + PrimeReact + Chart.js. Features complete inventory management, voucher creation, profile management, bilingual UI (EN/JA).",
           },
         ],
       },
@@ -47,22 +47,14 @@ export const messages = {
         { name: "English", level: "Business", percent: 90 },
       ],
       title: "About Me",
-      content:
-        "Myanmar-born engineer based in Kanagawa, Japan. I'm transitioning into a Frontend Web Developer while working as a researcher at Kajima Corporation Technical Research Institute and as a Frontend Intern at MMS IT. I build clean, fast, bilingual UIs with Next.js/React and Tailwind.",
-      journey: "Highlights",
-      current: "Researcher @ Kajima + Frontend Intern @ MMS IT",
-      focus:
-        "Frontend-first: Next.js, React, Tailwind, Zustand, SWR, PrimeReact, Chart.js, Framer Motion; bilingual EN/JA (JLPT N2).",
       // New: stat labels/values used by the About section cards
       stats: {
         basedInLabel: "Based in",
         basedIn: "Kanagawa, Japan",
         currentLabel: "Current",
-        current: "Researcher @ Kajima Technical Research Institute",
+        current: "Researcher @ Kajima + Frontend Intern @ MMS IT",
         seekingLabel: "Seeking",
-        seeking: "Frontend Web Developer roles in Japan",
-        languagesLabel: "Languages",
-        languages: "English / Japanese",
+        seeking: "Frontend Web Developer roles anywhere in Japan",
       },
     },
     skills: {
@@ -75,16 +67,15 @@ export const messages = {
     },
     projects: {
       title: "Featured Projects",
-      description:"Showcasing my journey from engineering concepts to digital solutions",
+      description:
+        "Showcasing my journey from engineering concepts to digital solutions",
       viewDemo: "Visit Website",
-      sourceCode: "Source Code",
-      details: "Details",
       items: [
         {
           key: "inventura",
           title: "Inventura - Inventory & Invoice Management",
           description:
-            "Inventory CRUD with real-time tracking, professional invoice generation and management, and dashboard analytics (revenue, sales, top products). Bilingual-ready (EN/JA).",
+            "Complete inventory management with real-time tracking, professional invoice generation and management, and dashboard analytics (revenue, sales, top products). Bilingual-ready (EN/JA).",
           tech: [
             "TailwindCSS",
             "React",
@@ -99,7 +90,7 @@ export const messages = {
           image: "/resume/projects/inventura.png",
           url: "https://inventura-inventory-management-syst.vercel.app/",
           featured: true,
-          tag:" Featured"
+          tag: " Featured",
         },
         {
           key: "swanthukha",
@@ -147,8 +138,6 @@ export const messages = {
       title: "My Journey",
       jobsTitle: "Work",
       educationTitle: "Education",
-      current: "Current Position",
-      previous: "Previous Experience",
       keyResponsibilities: "Key Responsibilities:",
       currentStatus: "Current",
       experiences: {
@@ -161,13 +150,11 @@ export const messages = {
           description:
             "Research support and operations at Kajima Technical Research Institute: quotation handling, procurement coordination, standardization and safety, data整理/visualization, and stakeholder communication.",
           highlights: [
-            "Quotation requests and documentation (Excel/Word/PowerPoint)",
-            "Procurement management: ordering, lead-time coordination, and delivery planning support",
-            "Standardization & safety: work standards, procedures, KY risk identification and mitigation",
-            "Research support: sensor setup assistance, data整理 and charting (Excel), report creation",
-            "Daily coordination and reporting with managers, partners, and research members",
-            "Improved technical Japanese writing/reading; Excel-based data analysis",
-            "Achieved cost reductions via competitive quotations; enhanced safety rules",
+            "Procurement of construction materials and equipment (competitive quotation creation and comparison, purchasing management)",
+            "Quotation requests and necessary documentation creation",
+            "Work standards and procedure manual creation, safety measures implementation",
+            "Measurement sensor installation support, measurement data organization and analysis (Excel usage)",
+            "Improvement proposals and material creation in team meetings",
           ],
         },
         internship: {
@@ -185,7 +172,6 @@ export const messages = {
             "Worked with Next.js for server-side rendering and optimized performance",
             "Utilized Git and GitHub for version control and collaborative development",
             "Developed frontend components based on provided design specifications",
-            "Applied JavaScript and Node.js for full-stack development tasks",
           ],
         },
         coordinator: {
@@ -230,6 +216,8 @@ export const messages = {
             "Automation technologies",
             "Technical documentation",
             "Problem-solving methodologies",
+            "Programming",
+            "IoT System Development",
           ],
         },
       },
@@ -288,7 +276,7 @@ export const messages = {
           {
             dot: "bg-blue-400",
             k: "在庫・請求管理システム (Inventura)",
-            v: "Next.js + Tailwind + Zustand + SWR + PrimeReact + Chart.js。 在庫CRUD、バウチャー作成、プロフィール管理、日英対応UI。",
+            v: "Next.js + Tailwind + Zustand + SWR + PrimeReact + Chart.js。 完全な在庫管理、バウチャー作成、プロフィール管理、日英対応UI。",
           },
         ],
       },
@@ -298,22 +286,14 @@ export const messages = {
         { name: "英語", level: "ビジネス", percent: 90 },
       ],
       title: "自己紹介",
-      content:
-        "神奈川県在住のミャンマー出身エンジニア。現在は鹿島建設 技術研究所で研究員（CO₂削減・データ分析）として勤務し、MMS ITでフロントエンドインターンとして活動しながら、Next.js/ReactとTailwindでクリーンで高速、日英対応のUIを構築するフロントエンドエンジニアを目指しています。",
-      journey: "ハイライト",
-      current: "鹿島建設 研究員 + MMS IT フロントエンドインターン",
-      focus:
-        "フロントエンド中心：Next.js / React / Tailwind / Zustand / SWR / PrimeReact / Chart.js / Framer Motion。英日バイリンガル（JLPT N2）。",
       // New: stat labels/values for cards
       stats: {
         basedInLabel: "拠点",
         basedIn: "神奈川県, 日本",
         currentLabel: "現職",
-        current: "鹿島建設 技術研究所 研究員",
+        current: "鹿島建設 研究員 + MMS IT フロントエンドインターン",
         seekingLabel: "志望職種",
-        seeking: "フロントエンドエンジニア（日本国内）",
-        languagesLabel: "言語",
-        languages: "英語 / 日本語",
+        seeking: "フロントエンドエンジニア（日本全国）",
       },
     },
     skills: {
@@ -326,16 +306,15 @@ export const messages = {
     },
     projects: {
       title: "主要プロジェクト",
-      description:"エンジニアリングコンセプトからデジタルソリューションまでの歩みを紹介",
+      description:
+        "エンジニアリングコンセプトからデジタルソリューションまでの歩みを紹介",
       viewDemo: "ウェブサイトを見る",
-      sourceCode: "ソースコード",
-      details: "詳細",
       items: [
         {
           key: "inventura",
           title: "インベンチュラ - 在庫・請求管理",
           description:
-            "在庫CRUDとリアルタイム追跡、プロフェッショナルな請求書の作成・管理、ダッシュボード分析（収益・売上・トップ商品）。英日バイリンガル対応。",
+            "完全な在庫管理とリアルタイム追跡、プロフェッショナルな請求書の作成・管理、ダッシュボード分析（収益・売上・トップ商品）。英日バイリンガル対応。",
           tech: [
             "TailwindCSS",
             "React",
@@ -350,7 +329,7 @@ export const messages = {
           image: "/resume/projects/inventura.png",
           url: "https://inventura-inventory-management-syst.vercel.app/",
           featured: true,
-          tag:"フィーチャー プロジェクト"
+          tag: "フィーチャー プロジェクト",
         },
         {
           key: "swanthukha",
@@ -398,8 +377,6 @@ export const messages = {
       title: "私の歩み",
       jobsTitle: "職歴",
       educationTitle: "学歴",
-      current: "現在のポジション",
-      previous: "以前の経験",
       keyResponsibilities: "主要業務:",
       currentStatus: "現職",
       experiences: {
@@ -412,13 +389,11 @@ export const messages = {
           description:
             "見積対応、設備の調達管理、標準化・安全の整備、研究支援（センサー設置補助・データ整理/グラフ化）、関係者調整などを担当。",
           highlights: [
-            "見積依頼対応・必要書類作成（Excel/Word/PowerPoint）",
-            "設備の調達管理（発注〜納期調整、搬入計画サポート）",
-            "標準化・安全（作業標準・手順書、KYの洗い出し/是正→再確認）",
-            "研究支援（センサー設置補助、計測データ整理・グラフ化（Excel）、報告資料作成）",
-            "関係者調整（日次の連携・報連相）",
-            "技術日本語の読み書き能力向上、Excelによるデータ分析",
-            "相見積・安全管理ルール整備によるコスト削減とリスク低減",
+            "工事に必要な資材・機材の調達（相見積書の作成・比較検討、購買管理）",
+            "見積依頼や必要書類の作成",
+            "作業標準書・作業手順書の作成、安全対策の実施",
+            "計測センサー設置補助、測定データの整理・分析（Excel 使用）",
+            "チーム会議での改善提案・資料作成",
           ],
         },
         internship: {
@@ -436,7 +411,6 @@ export const messages = {
             "サーバーサイドレンダリングとパフォーマンス最適化にNext.jsを活用",
             "バージョン管理と共同開発にGitとGitHubを使用",
             "提供されたデザイン仕様に基づいてフロントエンドコンポーネントを開発",
-            "フルスタック開発タスクにJavaScriptとNode.jsを適用",
           ],
         },
         coordinator: {
@@ -481,6 +455,8 @@ export const messages = {
             "自動化技術",
             "技術文書作成",
             "問題解決手法",
+            "プログラミング",
+            "IoTシステム開発",
           ],
         },
       },
